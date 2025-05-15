@@ -1,0 +1,811 @@
+---
+import Navbar from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/root.less';
+
+
+// Import images
+import image1 from '../assets/IMG_4064.jpeg';
+import image2 from '../assets/IMG_4065.jpeg';
+---
+
+<Layout>
+	<Navbar />
+
+	<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbsr-956">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Left Image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset={image1.src}>
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset={image1.src}>
+                <img loading="lazy" decoding="async" src={image1.src} alt="liz morales" width="349" height="590">
+            </picture>
+            <div class="cs-flex">
+                <!--right image-->
+                <picture class="cs-picture cs-picture2">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset={image2.src}>
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset={image2.src}>
+                    <img loading="lazy" decoding="async" src={image2.src} alt="liz morales" width="281" height="387">
+                </picture>
+                <div class="cs-contact-group">
+                    <a class="cs-link" href="mailto:Info@health&wellness.com">
+                        <picture class="cs-wrapper">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-hair.svg" alt="icon" width="24" height="24">
+                        </picture>
+                        <div class="cs-info">
+                            <span class="cs-header">Venmo</span>
+                            <span class="cs-link-content">@ahumanu</span>
+                        </div>
+                    </a>
+                    <a class="cs-link" href="">
+                        <picture class="cs-wrapper">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-hair.svg" alt="icon" width="24" height="24">
+                        </picture>
+                        <div class="cs-info">
+                            <span class="cs-header">Get in touch</span>
+                            <span class="cs-link-content">ahumanu@yahoo.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Native Hawaiian Musician, Wedding Officiant, & Hawaiian Music Practitioner/Educator</span>
+            <h2 class="cs-title">Liz Morales</h2>
+            <p class="cs-text">
+                The Hair salon Stitch pack is designed specifically for a hairdressers, salons, and beauty centers, with a modern high end feel to match the expectations for design in this industry. These Stitches are great for anything and everything hair and beauty but can also be repurposed for anything high end or luxury.
+            </p>
+            <a href="" class="cs-button-solid" aria-label="learn more about us">Current Schedule</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Menu Group                  -->
+<!-- ============================================ -->
+
+<div id="cs-menu-group-1031">
+    <!--Breakfast-->
+    <div id="cs-menu1-1031" class="cs-menu-group">
+        <!--Breakfast Section 1-->
+        <section class="cs-menu">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <h2 class="cs-title">Currently Playing</h2>
+                    <p class="cs-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <ul class="cs-menu-list">
+                    <!--If you want a row of three, add cs-3 class to the row and it will format to the a 3 item menu row-->
+                    <div class="cs-menu-row cs-3">
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Sundays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Mondays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Tuesdays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cs-menu-row">
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Wednesdays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Thursdays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cs-menu-row">
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Fridays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                        <div class="cs-menu-item">
+                            <h3 class="cs-h3">
+                                <span class="cs-name">Saturdays 5:00PM</span>
+                            </h3>
+                            <p class="cs-menu-p">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+                                
+                                
+</Layout>
+
+<style lang="less">
+	/*-- -------------------------- -->
+<---    Side By Side Reverse    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-956 {
+        padding: var(--sectionPadding);
+		padding-top: 12rem;
+        background-color: var(--primary);
+        /* clips anything overflowing */
+        overflow: hidden;
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (542/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+		.cs-title {
+			font-family: 'Rock Salt', cursive;
+			font-size: 3.5rem;
+			padding: 2rem;
+		}
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            opacity: 0.8;
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-image-group {
+            width: 100%;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+       .cs-picture {
+            width: 100%;
+            grid-column: span 12;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* Remove the absolute positioning which is causing issues */
+                position: relative; /* Changed from absolute */
+                top: auto; /* Changed from 0 */
+                left: auto; /* Changed from 0 */
+            }
+        }
+
+        .cs-picture1 {
+            height: auto;
+			width: 100%; /* Make it full width of its container */
+			max-width: 100%; /* Set a maximum width if needed */
+			margin: 0 auto; /* Center it if desired */
+
+			 img {
+                position: static; /* Remove positioning constraints */
+                height: auto; /* Allow height to adjust with width */
+            }
+        }
+
+        .cs-picture2 {
+            height: (348/16rem);
+        }
+
+        .cs-flex {
+            width: 100%;
+            /* breaks up the container so the browser treats its children as if they are not inside this container. They are considered children of the .cs-image-group and makes it easier to space everything this way on mobile */
+            display: contents;
+        }
+
+        .cs-contact-group {
+            width: 100%;
+            margin: 0;
+            /* 24px - 40px */
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            border: 1px solid #484848;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            grid-column: span 12;
+        }
+
+        .cs-link {
+            text-decoration: none;
+            margin-bottom: (20/16rem);
+            padding-bottom: (20/16rem);
+            border-bottom: 1px solid #484848;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: (16/16rem);
+            position: relative;
+            z-index: 1;
+
+            &:hover {
+                .cs-wrapper {
+                    transform: scale(1.2);
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        .cs-wrapper {
+            /* 44px - 56px */
+            width: clamp(2.75rem, 4.3vw, 3.5rem);
+            height: clamp(2.75rem, 4.3vw, 3.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            position: relative;
+            transition: transform 0.3s;
+
+            &:before {
+                /* light grey circle that animates on hover */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--secondary);
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition:
+                    width 0.3s,
+                    height 0.3s;
+            }
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .cs-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (4/16rem);
+        }
+
+        .cs-header {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .cs-link-content {
+            font-size: (14/16rem);
+            line-height: 1.2em;
+            font-weight: 400;
+            margin: 0;
+            color: var(--secondary);
+            opacity: 0.8;
+            display: block;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-956 {
+        .cs-image-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+			max-width: 90%;
+        }
+
+        .cs-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-contact-group {
+            /* 32px - 64px */
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-picture1 {
+            width: 100%;
+            height: auto;
+            /* 32px - 64px */
+            margin-top: clamp(2rem, 6vw, 4rem);
+        }
+
+        .cs-flex {
+            /* 267px - 325px */
+            width: clamp(16.6875rem, 25vw, 20.3125rem);
+            /* prevents flexbox from squishing it */
+            flex: none;
+            /* sends it to the far left */
+            order: -1;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbsr-956 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cs-image-group {
+            width: 55%;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+
+		.cs-picture1 {
+            /* Add any desktop-specific styles for cs-picture1 here */
+            max-width: 100%; /* Allow it to fill its container on desktop */
+        }
+    }
+}
+
+/* Large Desktop - 1800px */
+@media only screen and (min-width: 112.5rem) {
+    #sbsr-956 {
+       
+    }
+}
+
+    
+/*-- -------------------------- -->
+<---           Menu             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    html,
+    body {
+        /* when you click a menu button and jump to the top of the screen this makes it so it has a smooth transiiton instead of an abrupt movement */
+        scroll-behavior: smooth;
+        overflow: initial;
+    }
+
+    #cs-menu-group-1031 {
+        text-align: center;
+        height: auto;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            padding: var(--sectionPadding);
+            /* 48px - 64px */
+            padding-top: clamp(3rem, 5vw, 4rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+        }
+
+        .cs-hidden {
+            display: none;
+        }
+
+        .cs-button-group {
+            width: auto;
+            max-width: (1000/16rem);
+            margin: 0 (16/16rem);
+            /* 16px - 28px top & bottom */
+            /* 32px - 48px left & right */
+            padding: clamp(1rem, 3vw, 1.75rem) clamp(2rem, 4vw, 3rem);
+            border-radius: (70/16rem);
+            background-color: #f3f3f3;
+            border: 1px solid #b4b2c7;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            /* 24px - 36px */
+            column-gap: clamp(1.5rem, 2vw, 2.25rem);
+            row-gap: (12/16rem);
+            position: sticky;
+            /* change based on how tall your navigation is above it.  If your navigation is 90px tall, set it to 100px from the top on mobile, and increase the larger value in the clamp to change the desktop value if you need to as well */
+            /* 84px - 110px */
+            top: clamp(5.25rem, 8vw, 6.875rem);
+            z-index: 1000;
+        }
+
+        .cs-button {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            color: #878787;
+            background: transparent;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition:
+                color 0.3s,
+                font-weight 0.3s,
+                color 0.3s;
+
+            &:hover {
+                color: var(--primary);
+                cursor: pointer;
+            }
+
+            &:after {
+                /* active state icon */
+                content: "";
+                position: relative;
+                display: block;
+                width: 0;
+                /* 16px - 24px */
+                height: clamp(1rem, 3vw, 1.5rem);
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffancy-icon.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0;
+                transition:
+                    width 0.3s,
+                    opacity 0.3s,
+                    margin-left 0.3s;
+            }
+
+            &.cs-active {
+                color: var(--headerColor);
+                font-weight: 700;
+                &:after {
+                    width: clamp(1.5625rem, 3vw, 2.25rem);
+                    opacity: 1;
+                    /* 8px - 16px */
+                    margin-left: clamp(0.5rem, 0.5vw, 1rem);
+                }
+            }
+        }
+
+        .cs-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 32px - 64px */
+            gap: clamp(2rem, 6vw, 4rem);
+
+            &.cs-menu-style2 {
+                /* changes to desktop at desktop */
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Fwood2-m.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: #000;
+                    opacity: 0.7;
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+
+                .cs-title,
+                .cs-text {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-name {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-menu-p {
+                    color: #fff;
+                    opacity: 0.8;
+                }
+            }
+
+            &.cs-menu-style3 {
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            max-width: (650/16rem);
+            margin: 0;
+            color: var(--secondary);
+        }
+
+		.cs-title {
+			font-family: 'Rock Salt', cursive; /* Change to your desired font */
+			font-size: 2.5rem; /* Adjust size as needed */
+			line-height: 1.2em;
+			margin-bottom: 1rem;
+    }
+
+        .cs-menu-list {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* 32px - 60px */
+            row-gap: clamp(2rem, 6vw, 3.75rem);
+            position: relative;
+            z-index: 20;
+            align-items: center; /* Center the menu rows */
+        }
+        
+        .cs-menu-row {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center the items horizontally */
+            /* 32px - 60px */
+            row-gap: clamp(2rem, 6vw, 3.75rem);
+            width: 100%; /* Full width on mobile */
+            max-width: 600px; /* Limit maximum width */
+        }
+        
+        /* Force all menu rows to be stacked, including cs-3 */
+        .cs-menu-row.cs-3 {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cs-menu-item {
+            text-align: center; /* Center the text */
+            list-style: none;
+            margin: 0 auto; /* Center the item */
+            width: 100%;
+            max-width: 500px; /* Limit maximum width */
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+            align-items: center; /* Center the content */
+        }
+        
+       .cs-h3 {
+			/* 20px - 25px */
+			font-size: clamp(1.25rem, 2vw, 1.5625rem);
+			line-height: 1.2em;
+			font-weight: 700;
+			width: 100%;
+			margin: 0;
+			display: flex;
+			justify-content: center; /* Center the heading */
+			align-items: center;
+			gap: (16/16rem);
+			position: relative;
+			
+			&:after {
+				/* Restore the divider line but make it centered */
+				content: "";
+				width: 50%; /* You can adjust this width */
+				height: 1px;
+				background: #b4b2c7;
+				opacity: 1;
+				position: relative;
+				display: block; /* Restore the line */
+				margin: 0 auto; /* Center the line */
+				order: 1; /* Keep the original order */
+			}
+		}
+
+        
+        .cs-name {
+            /* 16px - 25px */
+            font-size: clamp(1rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            margin: 0 auto; /* Center the name */
+            max-width: 100%; /* Allow full width */
+            color: var(--secondary);
+            display: block;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            text-align: center; /* Center the text */
+        }
+        
+        .cs-menu-p {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            text-align: center; /* Center the text */
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-menu-group-1031 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-menu {
+            &.cs-menu-style2 {
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Fwood.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .cs-menu-row {
+            width: 100%;
+            flex-direction: column; /* Keep stacked on tablet */
+            justify-content: center;
+            align-items: center;
+            /* 32px - 80px */
+            gap: clamp(2em, 4vw, 5rem);
+            
+            &.cs-3 {
+                flex-direction: column; /* Override the row layout for cs-3 */
+                align-items: center;
+                
+                .cs-h3 {
+					/* 20px - 25px */
+					font-size: clamp(1.25rem, 2vw, 1.5625rem);
+					line-height: 1.2em;
+					font-weight: 700;
+					width: 100%;
+					margin: 0;
+					display: flex;
+					justify-content: center; /* Center the heading */
+					align-items: center;
+					gap: (16/16rem);
+					position: relative;
+					
+					&:after {
+						/* Restore the divider line but make it centered */
+						content: "";
+						width: 50%; /* You can adjust this width */
+						height: 1px;
+						background: #b4b2c7;
+						opacity: 1;
+						position: relative;
+						display: block; /* Restore the line */
+						margin: 0 auto; /* Center the line */
+						order: 1; /* Keep the original order */
+					}
+              }
+                
+                .cs-name {
+                    font-size: clamp(1rem, 2vw, 1.5625rem);
+                    width: auto;
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        
+        .cs-menu-item {
+            max-width: (600/16rem);
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cs-name {
+            width: auto;
+            max-width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}
+                                
+
+</style>
