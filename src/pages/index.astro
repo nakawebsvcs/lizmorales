@@ -2,11 +2,14 @@
 import Navbar from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Discography from '../components/Discography.astro';
+import Weddings from '../components/Weddings.astro';
+import Merch from '../components/Merch.astro';
 import '../styles/root.less';
 
 // Import images
 import image1 from '../assets/IMG_4064.jpeg';
 import image2 from '../assets/IMG_4065.jpeg';
+import aboutImage from '../assets/IMG_4132.jpeg';
 ---
 
 <Layout>
@@ -161,6 +164,85 @@ import image2 from '../assets/IMG_4065.jpeg';
 </div>
 
 <Discography />
+<Weddings />
+<Merch />
+
+<!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-51">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Tips Welcome!</span>
+            <h2 class="cs-title">Tips and Payments Accepted Via Venmo</h2>
+            <!-- <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis at sit pellentesque molestie.  Diam, adipiscing ultrices eu turpis gravida.
+            </p> -->
+            <!-- Replace the button with a Venmo QR code placeholder -->
+<div class="cs-venmo-container">
+    <div class="cs-venmo-qr">
+        <!-- Placeholder QR code - replace with actual QR code image when available -->
+        <svg class="cs-qr-placeholder" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="200" height="200" fill="#f5f5f5"/>
+            <g fill="#008CFF">
+                <!-- QR code pattern simulation -->
+                <rect x="20" y="20" width="160" height="160" fill="none" stroke="#008CFF" stroke-width="4"/>
+                <rect x="40" y="40" width="40" height="40" />
+                <rect x="120" y="40" width="40" height="40" />
+                <rect x="40" y="120" width="40" height="40" />
+                <rect x="100" y="100" width="40" height="40" />
+                <!-- Venmo logo in center -->
+                <circle cx="100" cy="100" r="20" fill="#008CFF"/>
+                <path d="M95 90 L105 90 L100 110 Z" fill="white"/>
+            </g>
+        </svg>
+    </div>
+    <div class="cs-venmo-info">
+        <svg class="cs-venmo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
+            viewBox="0 0 24 24" 
+            style="fill: var(--secondaryLight); width: 32px; height: 32px;">
+            <path d="M17.4608 3H6.5392C4.5888 3 3 4.5888 3 6.5392V17.4608C3 19.4112 4.5888 21 6.5392 21H17.4608C19.4112 21 21 19.4112 21 17.4608V6.5392C21 4.5888 19.4112 3 17.4608 3ZM13.2 16.5H9L7.5 7.5H11.7L12.6 13.5C13.8 11.4 14.7 9 14.7 7.8C14.7 7.2 14.55 6.75 14.25 6.3H18C18.3 6.9 18.45 7.5 18.45 8.25C18.45 11.4 15.3 15.15 13.2 16.5Z"/>
+        </svg>
+        <span class="cs-venmo-text">@ahumanu</span>
+    </div>
+</div>
+        </div>
+    </div>
+    
+</section>
+
+<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbsr-1011">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <picture class="cs-picture">
+                <!--Desktop-->
+                <source media="(min-width: 1024px)" srcset={aboutImage.src}>
+                <!--Tablet-->
+                <source media="(min-width: 601px)" srcset={aboutImage.src}>
+                <!--Mobile-->
+                <source media="(max-width: 600px)" srcset={aboutImage.src}>
+                <img loading="lazy" decoding="async" src={aboutImage.src} alt="liz morales" width="522" height="461" aria-hidden="true">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Bio</span>
+            <h2 class="cs-title">About Liz</h2>
+            <p class="cs-text">
+                Liz Morales, a respected community leader from Maui, is a multi-talented performer, singer,songwriter, music producer, and educator. She is the founder of the band Ahumanu, which has garnered recognition as a Na Hoku Hanohano Award finalist and Grammy-nominated group since 2003. Ahumanu has captivated audiences globally, spreading Hawaiian music across various countries such as Tahiti, Rapa Nui, Japan, Korea, and now in Europe. Liz has mastered multiple instruments and music genres through the traditional Hawaiian method of learning, which emphasizes observation and listening over asking questions.
+                <!--Creates the space between p tags on mobile-->
+                <span class="cs-spacer"></span>
+                Her musical journey began when she learned to play the guitar from her father, who encouraged her to watch and listen attentively instead of seeking immediate answers. This approach shaped her into a resourceful and analytical musician who can reproduce desired sounds independently. Music has profoundly influenced Liz's life, and she is enthusiastic about sharing her passion for Hawaiian music with music enthusiasts worldwide.
+            </p>
+            <a href="" class="cs-button-solid">Get in Touch</a>
+        </div>
+    </div>
+</section>
+                                
                                 
 
 <style lang="less">
@@ -810,6 +892,350 @@ import image2 from '../assets/IMG_4065.jpeg';
         }
     }
 }
-                                
+
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-51 {
+        padding: var(--sectionPadding);
+        position: relative;
+        background-color: var(--secondary);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-picture {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* black color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #000;
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Venmo QR Code Styles */
+.cs-venmo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cs-venmo-qr {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cs-qr-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.cs-venmo-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cs-venmo-icon {
+    flex-shrink: 0;
+}
+
+.cs-venmo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 48rem) {
+    .cs-venmo-qr {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/*-- -------------------------- -->
+<---    Side By Side Reverse    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-1011 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (800/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            /* changes to 522px at desktop */
+            max-width: (578/16rem);
+            margin-top: (-16/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-title,
+        .cs-text {
+            color: var(--secondary);
+        }
+
+        .cs-title {
+            font-family: 'Rock Salt', cursive;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            padding: 1rem;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            opacity: 0.8;
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-spacer {
+            width: 100%;
+            /* 16px - 24px */
+            height: clamp(1rem, 3vw, 1.5rem);
+            display: block;
+        }
+
+        .cs-image-group {
+            width: 100%;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: (261/16rem);
+            border: 12px solid var(--secondary);
+            background-color: #fff;
+            display: block;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes it behave like a background image */
+                object-fit: cover;
+            }
+        }
+
+        .cs-seal {
+            /* changes to a clamp(104px - 190px) at desktop */
+            width: (104/16rem);
+            height: auto;
+            /* 104px - 190px */
+            /* wrapped clamp in calc function to make the value negative, and multiply by half (.5) the height to it always overlaps the bg image by half its height */
+            margin-top: ~"calc(clamp(6.5rem, 12vw, 11.875rem)*-.5)";
+            margin-left: auto;
+            /* 28px - 120px */
+            margin-right: clamp(1.75rem, 10vw, 7.5rem);
+            background-color: #fff;
+            border: clamp(6px, 0.8vw, 12px) solid #fff;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            /* make it rest on top of the bg picture */
+            z-index: 10;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-1011 {
+        .cs-container {
+            align-items: flex-start;
+        }
+        .cs-flex-group {
+            flex-direction: row;
+        }
+
+        .cs-text {
+            columns: 2;
+            column-gap: (24/16rem);
+        }
+
+        .cs-spacer {
+            display: none;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbsr-1011 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            /* 100px - 200px */
+            gap: clamp(6.25rem, 13vw, 12.5rem);
+        }
+
+        .cs-image-group {
+            max-width: (542/16rem);
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+
+        .cs-picture {
+            height: (460/16rem);
+            aspect-ratio: initial;
+        }
+
+        .cs-seal {
+            /* 104 - 190px */
+            width: clamp(6.5rem, 13vw, 11.875rem);
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            /* subtract 12px (.75rem) to account for the border */
+            left: ~"calc((clamp(6.5rem, 13vw, 11.875rem)*-.5) + -.75rem)";
+            transform: translateY(-50%);
+        }
+
+        .cs-content {
+            flex: none;
+            width: 54%;
+            max-width: (542/16rem);
+        }
+    }
+}
 
 </style>
