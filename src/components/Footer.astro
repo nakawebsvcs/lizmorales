@@ -1,0 +1,66 @@
+---
+// Get current year for copyright
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="copyright">&copy; {currentYear} Liz Morales. All rights reserved.</p>
+    <p class="credits">Website by <a href="https://nakamurawebservices.com" target="_blank" rel="noopener">Nakamura Web Services</a></p>
+  </div>
+</footer>
+
+<style lang="less">
+  .site-footer {
+    background-color: var(--secondary);
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    color: var(--primary);
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    font-weight: 500;
+  }
+
+  .credits {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .site-footer {
+      padding: 2rem 1rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+    
+    .credits {
+      font-size: 0.9rem;
+    }
+  }
+</style>
