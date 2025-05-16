@@ -40,7 +40,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                     <img loading="lazy" decoding="async" src={image2.src} alt="liz morales" width="281" height="387">
                 </picture>
                 <div class="cs-contact-group">
-                    <a class="cs-link" href="mailto:Info@health&wellness.com">
+                    <a class="cs-link" href="">
                         <div class="cs-wrapper">
      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
          viewBox="0 0 24 24" 
@@ -53,7 +53,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                             <span class="cs-link-content">@ahumanu</span>
                         </div>
                     </a>
-                    <a class="cs-link" href="">
+                    <a class="cs-link" href="mailto:ahumanu@yahoo.com">
                         <picture class="cs-wrapper">
                             <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-hair.svg" alt="icon" width="24" height="24">
                         </picture>
@@ -238,7 +238,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                 <span class="cs-spacer"></span>
                 Her musical journey began when she learned to play the guitar from her father, who encouraged her to watch and listen attentively instead of seeking immediate answers. This approach shaped her into a resourceful and analytical musician who can reproduce desired sounds independently. Music has profoundly influenced Liz's life, and she is enthusiastic about sharing her passion for Hawaiian music with music enthusiasts worldwide.
             </p>
-            <a href="" class="cs-button-solid">Get in Touch</a>
+            <button class="cs-button-solid" onclick="openContactForm()">Get in Touch</button>
         </div>
     </div>
 </section>
@@ -254,7 +254,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 @media only screen and (min-width: 0rem) {
     #sbsr-956 {
         padding: var(--sectionPadding);
-		padding-top: 12rem;
+        padding-top: 12rem;
         background-color: var(--primary);
         /* clips anything overflowing */
         overflow: hidden;
@@ -283,11 +283,11 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             align-items: flex-start;
         }
 
-		.cs-title {
-			font-family: 'Rock Salt', cursive;
-			font-size: 3.5rem;
-			padding: 2rem;
-		}
+        .cs-title {
+            font-family: 'Rock Salt', cursive;
+            font-size: 3.5rem;
+            padding: 2rem;
+        }
 
         .cs-text {
             margin-bottom: (16/16rem);
@@ -299,14 +299,14 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 
         .cs-image-group {
             width: 100%;
-            max-width: 100%;
+            max-width: (650/16rem);
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             /* 16px - 20px */
             gap: clamp(1rem, 1.5vw, 1.25rem);
         }
 
-       .cs-picture {
+        .cs-picture {
             width: 100%;
             grid-column: span 12;
             position: relative;
@@ -315,23 +315,14 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                /* Remove the absolute positioning which is causing issues */
-                position: relative; /* Changed from absolute */
-                top: auto; /* Changed from 0 */
-                left: auto; /* Changed from 0 */
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
 
         .cs-picture1 {
-            height: auto;
-			width: 100%; /* Make it full width of its container */
-			max-width: 100%; /* Set a maximum width if needed */
-			margin: 0 auto; /* Center it if desired */
-
-			 img {
-                position: static; /* Remove positioning constraints */
-                height: auto; /* Allow height to adjust with width */
-            }
+            height: (420/16rem);
         }
 
         .cs-picture2 {
@@ -457,7 +448,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-			max-width: 90%;
+            max-width: 90%;
         }
 
         .cs-flex {
@@ -477,7 +468,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 
         .cs-picture1 {
             width: 100%;
-            height: auto;
+            height: (420/16rem);
             /* 32px - 64px */
             margin-top: clamp(2rem, 6vw, 4rem);
         }
@@ -511,9 +502,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             order: 2;
         }
 
-		.cs-picture1 {
-            /* Add any desktop-specific styles for cs-picture1 here */
-            max-width: 100%; /* Allow it to fill its container on desktop */
+        .cs-picture1 {
+            height: (590/16rem);
         }
     }
 }
