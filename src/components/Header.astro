@@ -36,11 +36,11 @@
                             Weddings
                         </a>
                     </li>
-                    <li class="cs-li">
+               <!--     <li class="cs-li">
                         <a href="#collection-1602" class="cs-li-link">
                             Merch
                         </a>
-                    </li>
+                    </li> -->
                     <li class="cs-li">
                         <a href="#cta-51" class="cs-li-link">
                             Payments
@@ -50,6 +50,10 @@
                         <a href="#sbsr-1011" class="cs-li-link">
                             Bio
                         </a>
+                    </li>
+                </ul>
+           <li class="cs-li cs-li-contact">
+                        <button class="cs-button-mobile" onclick="openContactForm()">Contact</button>
                     </li>
                 </ul>
             </div>
@@ -148,7 +152,7 @@ html {
 
         h1 {
             font-family: 'Allura', cursive;
-            font-size: 2rem;
+            font-size: clamp(2.5rem, 3vw, 3rem);
             color: var(--secondary);
             white-space: nowrap;
             margin: 0 0 0 6rem; 
@@ -341,6 +345,33 @@ html {
             }
         }
 
+        .cs-button-mobile {
+            /* 16px - 24px */
+            font-size: clamp(1rem, 1vw, 1.3rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            margin: 0;
+            padding: (12/16rem) (24/16rem);
+            color: var(--primary);
+            background-color: var(--secondary);
+            border: 2px solid var(--secondary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                color: var(--secondary);
+                background-color: transparent;
+            }
+        }
+
+        .cs-li-contact {
+    padding-top: (20/16rem);
+}
+
+
         .cs-button-solid {
             display: none;
         }
@@ -447,6 +478,10 @@ html {
             &.cs-active {
                 color: gray;
             }
+        }
+
+        .cs-li-contact {
+            display: none;
         }
     }
 }
