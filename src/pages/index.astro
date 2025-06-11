@@ -41,7 +41,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                     <img loading="lazy" decoding="async" src={image2.src} alt="liz morales" width="281" height="387">
                 </picture>
                 <div class="cs-contact-group">
-                    <a class="cs-link" href="">
+                    <a class="cs-link" href="https://venmo.com/u/Ahumanu" target="_blank">
                         <div class="cs-wrapper">
      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
          viewBox="0 0 24 24" 
@@ -89,50 +89,58 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             <div class="cs-container">
                 <div class="cs-content">
                     <h2 class="cs-title">Currently Playing</h2>
-                    <p class="cs-text">
+                 <!--   <p class="cs-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                    </p>
+                    </p> -->
                 </div>
                 <ul class="cs-menu-list">
-                    <!--If you want a row of three, add cs-3 class to the row and it will format to the a 3 item menu row-->
                     <div class="cs-menu-row cs-3">
                         <div class="cs-menu-item">
                             <h3 class="cs-h3">
-                                <span class="cs-name">Sundays 5:00PM</span>
+                                <span class="cs-name">Cane and Canoe - Montage Kapalua Bay</span>
+                                <span class="cs-divider"></span>
+                                <span class="cs-name-secondary">5:30-8:00pm</span>
                             </h3>
                             <p class="cs-menu-p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                June 4, 8, 11, 15, 18, 22, 25, 29
                             </p>
                         </div>
                         <div class="cs-menu-item">
                             <h3 class="cs-h3">
-                                <span class="cs-name">Mondays 5:00PM</span>
+                                <span class="cs-name">Pilina Lounge - Fairmont Kea Lani</span>
+                                <span class="cs-divider"></span>
+                                <span class="cs-name-secondary">5:30-8:30pm</span>
                             </h3>
                             <p class="cs-menu-p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                June 2, 9, 16, 23, 30
                             </p>
                         </div>
                         <div class="cs-menu-item">
                             <h3 class="cs-h3">
-                                <span class="cs-name">Tuesdays 5:00PM</span>
+                                <span class="cs-name">Alaloa Lounge - Ritz Carlton Kapalua</span>
+                                <span class="cs-divider"></span>
+                                <span class="cs-name-secondary">6:00-9:00pm</span>
                             </h3>
                             <p class="cs-menu-p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                June 13
                             </p>
                         </div>
                     </div>
                     <div class="cs-menu-row">
                         <div class="cs-menu-item">
                             <h3 class="cs-h3">
-                                <span class="cs-name">Wednesdays 5:00PM</span>
+                                <span class="cs-name">Honuaula Luau - Grand Wailea Resort</span>
+                                <span class="cs-divider"></span>
+                                <span class="cs-name-secondary">5:00-8:00pm</span>
                             </h3>
                             <p class="cs-menu-p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                June 5, 12, 19, 26
                             </p>
                         </div>
-                        <div class="cs-menu-item">
+                      <!--  <div class="cs-menu-item">
                             <h3 class="cs-h3">
                                 <span class="cs-name">Thursdays 5:00PM</span>
+                                <span class="cs-name-secondary">5:30-8:00pm</span>
                             </h3>
                             <p class="cs-menu-p">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
@@ -155,7 +163,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                             <p class="cs-menu-p">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                     </div>
                 </ul>
@@ -166,7 +174,6 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 
 <Discography />
 <Weddings />
-<Merch />
 
 <!-- ============================================ -->
 <!--                     CTA                      -->
@@ -180,26 +187,12 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             <!-- <p class="cs-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis at sit pellentesque molestie.  Diam, adipiscing ultrices eu turpis gravida.
             </p> -->
-            <!-- Replace the button with a Venmo QR code placeholder -->
 <div class="cs-venmo-container">
     <div class="cs-venmo-qr">
-        <!-- Placeholder QR code - replace with actual QR code image when available -->
-        <svg class="cs-qr-placeholder" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="0" width="200" height="200" fill="#f5f5f5"/>
-            <g fill="#008CFF">
-                <!-- QR code pattern simulation -->
-                <rect x="20" y="20" width="160" height="160" fill="none" stroke="#008CFF" stroke-width="4"/>
-                <rect x="40" y="40" width="40" height="40" />
-                <rect x="120" y="40" width="40" height="40" />
-                <rect x="40" y="120" width="40" height="40" />
-                <rect x="100" y="100" width="40" height="40" />
-                <!-- Venmo logo in center -->
-                <circle cx="100" cy="100" r="20" fill="#008CFF"/>
-                <path d="M95 90 L105 90 L100 110 Z" fill="white"/>
-            </g>
-        </svg>
+       <img src="/assets/qr-code.png" alt="Venmo QR Code">
     </div>
-    <div class="cs-venmo-info">
+    <a href="https://venmo.com/u/Ahumanu" target="_blank" class="cs-venmo-link">
+        <div class="cs-venmo-info">
         <svg class="cs-venmo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
             viewBox="0 0 24 24" 
             style="fill: var(--secondaryLight); width: 32px; height: 32px;">
@@ -207,6 +200,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         </svg>
         <span class="cs-venmo-text">@ahumanu</span>
     </div>
+    </a>
 </div>
         </div>
     </div>
@@ -288,8 +282,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         }
 
         .cs-title {
-            font-family: 'Rock Salt', cursive;
-            font-size: 3.5rem;
+            font-family: 'Allura', cursive;
+            font-size: 5rem;
             padding: 2rem;
         }
 
@@ -708,8 +702,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         }
 
 		.cs-title {
-			font-family: 'Rock Salt', cursive; /* Change to your desired font */
-			font-size: 2.5rem; /* Adjust size as needed */
+			font-family: 'Allura', cursive; /* Change to your desired font */
+			font-size: 3rem; /* Adjust size as needed */
 			line-height: 1.2em;
 			margin-bottom: 1rem;
     }
@@ -757,29 +751,17 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         
        .cs-h3 {
 			/* 20px - 25px */
-			font-size: clamp(1.25rem, 2vw, 1.5625rem);
-			line-height: 1.2em;
-			font-weight: 700;
-			width: 100%;
-			margin: 0;
-			display: flex;
-			justify-content: center; /* Center the heading */
-			align-items: center;
-			gap: (16/16rem);
-			position: relative;
-			
-			&:after {
-				/* Restore the divider line but make it centered */
-				content: "";
-				width: 50%; /* You can adjust this width */
-				height: 1px;
-				background: #b4b2c7;
-				opacity: 1;
-				position: relative;
-				display: block; /* Restore the line */
-				margin: 0 auto; /* Center the line */
-				order: 1; /* Keep the original order */
-			}
+			 font-size: clamp(1.25rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center the heading */
+            align-items: center;
+            gap: (16/16rem);
+            position: relative;
+            
 		}
 
         
@@ -795,15 +777,39 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             flex: none;
             text-align: center; /* Center the text */
         }
+
+        .cs-divider {
+    width: 30px;
+    height: 1px;
+    background: #b4b2c7;
+    opacity: 1;
+    flex: none;
+}
+
+        .cs-name-secondary {
+    /* 16px - 25px */
+    font-size: clamp(1rem, 2vw, 1.5625rem);
+    line-height: 1.2em;
+    margin: 0 auto; /* Center the name */
+    max-width: 100%; /* Allow full width */
+    color: var(--secondary);
+    display: block;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    text-align: center; /* Center the text */ /* Slightly more subtle than the main name */
+    font-weight: 400; /* Regular weight to differentiate from main name if needed */
+}
+
         
         .cs-menu-p {
             /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
-            line-height: 1.5em;
+            font-size: clamp(1rem, 2vw, 1.5625rem);
+    line-height: 1.2em;
             text-align: center; /* Center the text */
             width: 100%;
             margin: 0;
-            color: var(--bodyTextColor);
+            color: var(--secondary);
+            opacity: 0.8;
         }
     }
 }
@@ -849,18 +855,6 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 					gap: (16/16rem);
 					position: relative;
 					
-					&:after {
-						/* Restore the divider line but make it centered */
-						content: "";
-						width: 50%; /* You can adjust this width */
-						height: 1px;
-						background: #b4b2c7;
-						opacity: 1;
-						position: relative;
-						display: block; /* Restore the line */
-						margin: 0 auto; /* Center the line */
-						order: 1; /* Keep the original order */
-					}
               }
                 
                 .cs-name {
@@ -869,6 +863,14 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                     max-width: 100%;
                     text-align: center;
                 }
+
+                .cs-divider {
+                width: 30px;
+                height: 1px;
+                background: #b4b2c7;
+                opacity: 1;
+                flex: none;
+            }
             }
         }
         
@@ -1019,17 +1021,32 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 }
 
 .cs-venmo-qr {
-    width: 200px;
-    height: 200px;
-    background-color: #ffffff;
-    padding: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 300px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* This ensures the QR code maintains its aspect ratio */
+    }
 }
 
 .cs-qr-placeholder {
     width: 100%;
     height: 100%;
+}
+
+.cs-venmo-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+    
+    &:hover .cs-venmo-info {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .cs-venmo-info {
@@ -1040,6 +1057,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
     padding: 0.5rem 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .cs-venmo-icon {
@@ -1055,8 +1073,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 /* Media query for larger screens */
 @media only screen and (min-width: 48rem) {
     .cs-venmo-qr {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -1101,8 +1119,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         }
 
         .cs-title {
-            font-family: 'Rock Salt', cursive;
-            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-family: 'Allura', cursive;
+            font-size: clamp(3rem, 6vw, 3.5rem);
             padding: 1rem;
         }
 

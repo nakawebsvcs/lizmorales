@@ -1,8 +1,10 @@
 ---
 // Import images
-import image1 from '../assets/pexels-record.jpg';
-import image2 from '../assets/ahumanu.jpg';
-import image3 from '../assets/pexels-record.jpg';
+import image1 from '../assets/Ahumanu-gathering.jpeg';
+import image2 from '../assets/ahumanu-songbird.jpeg';
+import image3 from '../assets/ahumanu-no-kuuipo.jpg';
+import image4 from '../assets/ahumanu.jpg';
+import image5 from '../assets/Ka-pilina-na-wahi-pana.jpeg';
 ---
 
 <!-- ============================================ -->
@@ -14,7 +16,7 @@ import image3 from '../assets/pexels-record.jpg';
     <div class="cs-content">
       <span class="cs-topper">Music</span>
       <h2 class="cs-title">Discography</h2>
-      <p class="cs-text">Aqestic recusandae laudantium optio amet a quisquam saepe aliquid, voluptate praesentium dicta fuga dolor error.</p>
+      <p class="cs-text">Liz Morales has been a vibrant force in Hawaiian music for many years. As a founding member of the acclaimed trio Ahumanu, she helped shape the group's soulful sound and deep cultural resonance. Today, she continues to influence the local music scene as the producer of the dynamic group Ka Pilina. Check back for upcoming solo releases that blend traditional Hawaiian roots with her unique creative voice.</p>
     </div>
     <div class="cs-gallery">
       <picture class="cs-picture">
@@ -38,10 +40,23 @@ import image3 from '../assets/pexels-record.jpg';
         <source media="(min-width: 601px)" srcset={image3.src}>
         <img loading="lazy" decoding="async" src={image3.src} alt="Album cover" width="480" height="549">
       </picture>
+       <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset={image4.src}>
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset={image4.src}>
+        <img loading="lazy" decoding="async" src={image4.src} alt="Album cover" width="480" height="549">
+      </picture>
+       <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset={image5.src}>
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset={image5.src}>
+        <img loading="lazy" decoding="async" src={image5.src} alt="Album cover" width="480" height="549">
+      </picture>
     </div>
   </div>
 </section>
-
  
 <style lang="less">
 /*-- -------------------------- -->
@@ -80,7 +95,7 @@ import image3 from '../assets/pexels-record.jpg';
     }
 
     .cs-title {
-      font-family: 'Rock Salt', cursive;
+      font-family: 'Allura', cursive;
       color: var(--primary);
     }
 
@@ -97,24 +112,54 @@ import image3 from '../assets/pexels-record.jpg';
     .cs-gallery {
       width: 100%;
       display: flex;
-      flex-direction: column; /* Stack vertically on mobile */
-      gap: 1.5rem; /* Space between stacked items */
+      flex-wrap: wrap;
+      justify-content: center; /* This centers all items and incomplete rows */
+      gap: 1.5rem;
     }
 
     .cs-picture {
       width: 100%;
-      height: (350/16rem); /* Fixed height for mobile */
+      max-width: (300/16rem); /* Limit max width on mobile */
+      aspect-ratio: 1; /* Perfect square for album covers */
       display: block;
       position: relative;
-      z-index: 1;
+      cursor: pointer; /* Hint at clickability */
+      transition: all 0.3s ease;
+      border-radius: 8px; /* Subtle rounded corners */
+      overflow: hidden; /* Ensure image respects border radius */
+      
+      /* Soft glow effect */
+      box-shadow: 
+        0 4px 15px rgba(255, 255, 255, 0.1),
+        0 2px 8px rgba(255, 255, 255, 0.05);
 
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+        object-fit: cover; /* Maintains aspect ratio while filling container */
+        object-position: center; /* Centers the image within the container */
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      /* Hover effects */
+      &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 
+          0 12px 30px rgba(255, 255, 255, 0.15),
+          0 6px 20px rgba(255, 255, 255, 0.1),
+          0 0 25px rgba(255, 255, 255, 0.08);
+        
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Active/focus states for accessibility */
+      &:focus,
+      &:active {
+        outline: 2px solid rgba(255, 255, 255, 0.3);
+        outline-offset: 4px;
       }
     }
 
@@ -129,6 +174,20 @@ import image3 from '../assets/pexels-record.jpg';
       bottom: 0;
       left: 0;
       z-index: 0; /* Make sure it's behind the content but visible */
+    }
+  }
+}
+
+/* Small Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+  #gallery-1716 {
+    .cs-gallery {
+      gap: 2rem;
+    }
+
+    .cs-picture {
+      width: calc(50% - 1rem); /* Two items per row with gap */
+      max-width: (250/16rem);
     }
   }
 }
@@ -148,16 +207,17 @@ import image3 from '../assets/pexels-record.jpg';
     }
 
     .cs-gallery {
-      height: auto;
-      width: 100%;
-      max-width: (1200/16rem);
-      flex-direction: row; /* Switch to horizontal layout */
-      justify-content: space-between;
+      gap: 2rem;
     }
 
     .cs-picture {
-      width: 32%; /* Slightly less than 1/3 to account for gaps */
-      height: (400/16rem);
+      width: calc(33.333% - 1.33rem); /* Three items per row with gap */
+      max-width: (220/16rem);
+      
+      /* Enhanced hover effect on larger screens */
+      &:hover {
+        transform: translateY(-12px) scale(1.03);
+      }
     }
 
     /* Adjust the overlay for tablet */
@@ -167,5 +227,44 @@ import image3 from '../assets/pexels-record.jpg';
   }
 }
 
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #gallery-1716 {
+    .cs-gallery {
+      gap: 2.5rem;
+    }
+
+    .cs-picture {
+      width: calc(33.333% - 1.67rem); /* Three items per row with larger gap */
+      max-width: (280/16rem);
+      
+      /* More pronounced hover effect on desktop */
+      &:hover {
+        transform: translateY(-15px) scale(1.04);
+      }
+    }
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  #gallery-1716 {
+    .cs-picture {
+      transition: none;
+      
+      img {
+        transition: none;
+      }
+      
+      &:hover {
+        transform: none;
+        
+        img {
+          transform: none;
+        }
+      }
+    }
+  }
+}
 </style>
 
