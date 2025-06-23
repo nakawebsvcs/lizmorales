@@ -9,7 +9,7 @@ import '../styles/root.less';
 
 // Import images
 import image1 from '../assets/IMG_4064.jpeg';
-import image2 from '../assets/IMG_4065.jpeg';
+import image2 from '../assets/img-1.jpeg';
 import aboutImage from '../assets/IMG_4132.jpeg';
 ---
 
@@ -159,7 +159,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 @media only screen and (min-width: 0rem) {
     #sbsr-956 {
         padding: var(--sectionPadding);
-        padding-top: 12rem;
+        padding-top: 7rem;
         background-color: var(--primary);
         /* clips anything overflowing */
         overflow: hidden;
@@ -229,6 +229,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 
         .cs-picture1 {
             height: (420/16rem);
+            margin-top: 1rem;
+            display: none;  /* Hide image1 on mobile */
         }
 
         .cs-picture2 {
@@ -350,6 +352,9 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #sbsr-956 {
+        padding-top: 12rem;
+    }
+    #sbsr-956 {
         .cs-image-group {
             display: flex;
             justify-content: space-between;
@@ -377,6 +382,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             height: (420/16rem);
             /* 32px - 64px */
             margin-top: clamp(2rem, 6vw, 4rem);
+            display: block;
         }
 
         .cs-flex {
