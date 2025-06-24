@@ -1,5 +1,17 @@
 ---
 import ContactForm from '../components/ContactForm.astro';
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Liz Morales | Native Hawaiian Musician, Wedding Officiant, & Hawaiian Music Practitioner/Educator",
+	description = "Known for her professionalism, creativity, and easygoing nature, Liz brings both talent and heart to every project."
+} = Astro.props;
+
+const domain = "lizmoralesmusic.com"; // Replace with your actual domain
 ---
 
 <!doctype html>
@@ -7,16 +19,29 @@ import ContactForm from '../components/ContactForm.astro';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
 		
 		 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico">
     	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
     	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Allura&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Allura&display=swap" rel="stylesheet">
+		
+		<!--Social Media Display-->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`https://${domain}${Astro.url.pathname}`} />
+		<meta property="og:image" content={`https://${domain}/assets/img-1.jpeg`} />
+		<meta property="og:image:secure_url" content={`https://${domain}/assets/img-1.jpeg`} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Liz Morales - Native Hawaiian Musician and Wedding Officiant" />
+		
 		<meta name="generator" content={Astro.generator} />
-		<title>Liz Morales | Native Hawaiian Musician, Wedding Officiant, & Hawaiian Music Practitioner/Educator</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
