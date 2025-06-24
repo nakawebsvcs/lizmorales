@@ -1,3 +1,9 @@
+---
+// Import images from src directory
+import weddingImage1 from '../assets/hm-1097.JPG';
+import weddingImage2 from '../assets/hm-1209.JPG';
+---
+
 <!-- ============================================ -->
 <!--                 Side By Side                 -->
 <!-- ============================================ -->
@@ -6,10 +12,10 @@
     <div class="cs-container">
         <picture class="cs-picture cs-picture1">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/hm-1097.JPG">
+            <source media="(max-width: 600px)" srcset={weddingImage1.src}>
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/hm-1097.JPG">
-            <img loading="lazy" decoding="async" src="/assets/hm-1097.JPG" alt="wedding" width="384" height="509">
+            <source media="(min-width: 601px)" srcset={weddingImage1.src}>
+            <img loading="lazy" decoding="async" src={weddingImage1.src} alt="wedding" width="384" height="509">
         </picture>
         <div class="cs-content">
             <!-- <span class="cs-topper">Welcome to Stitchography</span> -->
@@ -23,10 +29,10 @@
             <button class="cs-button-solid" onclick="openContactForm()">Book Me</button>
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/hm-1209.JPG">
+                <source media="(max-width: 600px)" srcset={weddingImage2.src}>
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/hm-1209.JPG">
-                <img loading="lazy" decoding="async" src="/assets/hm-1209.JPG" alt="wedding" width="383" height="262">
+                <source media="(min-width: 601px)" srcset={weddingImage2.src}>
+                <img loading="lazy" decoding="async" src={weddingImage2.src} alt="wedding" width="383" height="262">
             </picture>
         </div>
     </div>

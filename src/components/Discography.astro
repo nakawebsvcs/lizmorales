@@ -107,28 +107,30 @@ const albumData = {
       <button class="lightbox-close">&times;</button>
       <div class="lightbox-body">
         <div class="lightbox-main-content">
-          <div class="lightbox-image">
-            <img id="lightbox-img" src="" alt="Album cover">
-          </div>
-          <div class="lightbox-info">
-            <h3 id="lightbox-title">Album Title</h3>
-            <div class="lightbox-release-date" id="lightbox-date">Release Date</div>
-            <p id="lightbox-description">Album description goes here...</p>
-            <div class="lightbox-tracklist">
-              <h4>Track Listing</h4>
-              <ol id="lightbox-tracks">
-                <!-- Tracks will be populated by JavaScript -->
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="lightbox-purchase">
-          <div class="lightbox-price" id="lightbox-price">$15.99</div>
-          <p id="lightbox-purchase-info">Available in digital and physical formats</p>
-          <button class="purchase-btn">Purchase Album</button>
-        </div>
-      </div>
+  <div class="lightbox-left-column">
+    <div class="lightbox-image">
+      <img id="lightbox-img" src="" alt="Album cover">
     </div>
+    <div class="lightbox-tracklist">
+      <h4>Track List</h4>
+      <ol id="lightbox-tracks">
+        <!-- Tracks will be populated by JavaScript -->
+      </ol>
+    </div>
+  </div>
+  <div class="lightbox-right-column">
+    <div class="lightbox-info">
+      <h3 id="lightbox-title">Album Title</h3>
+      <div class="lightbox-release-date" id="lightbox-date">Release Date</div>
+      <p id="lightbox-description">Album description goes here...</p>
+    </div>
+    <div class="lightbox-purchase">
+      <div class="lightbox-price" id="lightbox-price">$15.99</div>
+      <p id="lightbox-purchase-info">Available in digital and physical formats</p>
+      <button class="purchase-btn">Purchase Album</button>
+    </div>
+  </div>
+</div>
   </div>
 </section>
 
@@ -163,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
     picture.setAttribute('tabindex', '0');
   });
 
-  // Close lightbox when clicking close button - Fixed event handling
+  // Close lightbox when clicking close button
   if (lightboxClose) {
     lightboxClose.addEventListener('click', function(e) {
       e.preventDefault();
@@ -179,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Close on overlay click (but not on content click) - Fixed
+  // Close on overlay click (but not on content click)
   if (lightbox) {
     lightbox.addEventListener('click', function(e) {
       if (e.target === lightbox) {
@@ -188,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Prevent closing when clicking on lightbox content - Fixed
+  // Prevent closing when clicking on lightbox content
   if (lightboxContent) {
     lightboxContent.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -222,12 +224,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (lightboxPrice) lightboxPrice.textContent = album.price;
     if (lightboxPurchaseInfo) lightboxPurchaseInfo.textContent = album.purchaseInfo;
     
-    // Populate track list
+    // Populate track list with forced white color
     if (trackList) {
       trackList.innerHTML = '';
       album.trackList.forEach(track => {
         const li = document.createElement('li');
         li.textContent = track;
+        // Force white color via inline styles
+        li.style.color = 'var(--primary)';
+        li.style.setProperty('color', 'var(--primary)', 'important');
         trackList.appendChild(li);
       });
     }
@@ -261,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 
 <style lang="less">
@@ -483,9 +489,19 @@ document.addEventListener('DOMContentLoaded', function() {
     gap: 1rem;
   }
 
+  /* Mobile-specific ordering */
+  .lightbox-left-column {
+    display: contents; /* This makes children behave as if they're direct children of the parent */
+  }
+
+  .lightbox-right-column {
+    display: contents; /* This makes children behave as if they're direct children of the parent */
+  }
+
   .lightbox-image {
+    order: 1;
     width: 100%;
-    max-width: 150px; /* Reduced from 200px */
+    max-width: 200px;
     margin: 0 auto;
     flex-shrink: 0;
 
@@ -498,15 +514,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .lightbox-info {
-    color: var(--primary); /* Ensure text stays white */
+    order: 2;
+    color: var(--primary);
     flex: 1;
-    min-height: 0; /* Allow flex item to shrink */
+    min-height: 0;
 
     h3 {
       font-family: 'Allura', cursive;
-      font-size: 1.5rem; /* Reduced from 1.8rem */
+      font-size: 2rem;
       margin-bottom: 0.25rem;
-      color: var(--primary); /* Ensure title stays white */
+      color: var(--primary);
       text-align: center;
       line-height: 1.2;
     }
@@ -516,27 +533,28 @@ document.addEventListener('DOMContentLoaded', function() {
       margin-bottom: 1rem;
       opacity: 0.8;
       text-align: center;
-      font-size: 0.85rem; /* Slightly smaller */
-      color: var(--primary); /* Ensure date stays white */
+      font-size: 0.85rem;
+      color: var(--primary);
     }
 
     p {
       margin-bottom: 1rem;
-      line-height: 1.4; /* Tighter line height */
-      font-size: 0.8rem; /* Smaller font */
-      color: var(--primary); /* Ensure description stays white */
+      line-height: 1.4;
+      font-size: 1rem;
+      color: var(--primary);
     }
   }
 
   .lightbox-tracklist {
+    order: 3;
     margin: 1rem 0;
     flex: 1;
     min-height: 0;
 
     h4 {
-      color: var(--primary); /* Ensure heading stays white */
+      color: var(--primary) !important;
       margin-bottom: 0.5rem;
-      font-size: 0.9rem; /* Smaller heading */
+      font-size: 0.9rem;
       text-align: center;
     }
 
@@ -544,29 +562,27 @@ document.addEventListener('DOMContentLoaded', function() {
       padding-left: 0;
       list-style: none;
       counter-reset: track-counter;
-      max-height: 120px; /* Reduced height */
+      max-height: 120px;
       overflow-y: auto;
       width: 100%;
 
       li {
-        margin-bottom: 0.2rem; /* Tighter spacing */
-        color: var(--primary); /* Ensure track text stays white */
-        padding: 0.4rem 0.4rem 0.4rem 2.2rem; /* Tighter padding */
+        margin-bottom: 0.2rem;
+        color: var(--primary) !important;
+        padding: 0.4rem 0.4rem 0.4rem 2.2rem;
         background: rgba(255, 255, 255, 0.03);
         border-radius: 4px;
         counter-increment: track-counter;
         position: relative;
-        font-size: 0.7rem; /* Even smaller font */
+        font-size: 0.7rem;
         line-height: 1.3;
         width: 100%;
         box-sizing: border-box;
         display: block;
-        /* More aggressive text wrapping */
-        word-break: break-all; /* Force breaking of long words */
+        word-break: break-all;
         overflow-wrap: break-word;
         white-space: normal;
         hyphens: auto;
-        /* Force text to wrap at container width */
         max-width: 100%;
 
         &:before {
@@ -576,41 +592,42 @@ document.addEventListener('DOMContentLoaded', function() {
           top: 0.4rem;
           opacity: 0.6;
           font-weight: bold;
-          font-size: 0.6rem; /* Smaller counter */
+          font-size: 0.6rem;
           width: 1.8rem;
           text-align: center;
           flex-shrink: 0;
-          color: var(--primary); /* Ensure counter stays white */
+          color: var(--primary) !important;
         }
       }
     }
   }
 
   .lightbox-purchase {
+    order: 4;
     background: rgba(255, 255, 255, 0.08);
-    padding: 0.8rem; /* Reduced padding */
+    padding: 0.8rem;
     border-radius: 8px;
     text-align: center;
     flex-shrink: 0;
 
     .lightbox-price {
-      font-size: 1.1rem; /* Smaller price */
+      font-size: 1.1rem;
       font-weight: bold;
-      color: var(--primary); /* Ensure price stays white */
+      color: var(--primary);
       margin-bottom: 0.4rem;
     }
 
     p {
       margin-bottom: 0.6rem;
-      font-size: 0.75rem; /* Smaller text */
-      color: var(--primary); /* Ensure purchase info stays white */
+      font-size: 0.75rem;
+      color: var(--primary);
     }
 
     .purchase-btn {
       background: var(--primary);
       color: var(--secondary);
       border: none;
-      padding: 0.6rem 1.2rem; /* Smaller button */
+      padding: 0.6rem 1.2rem;
       border-radius: 6px;
       font-size: 0.8rem;
       font-weight: bold;
@@ -653,11 +670,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .lightbox-image {
-      max-width: 200px; /* Larger on tablet */
+      max-width: 200px;
     }
 
     .lightbox-info h3 {
-      font-size: 1.8rem; /* Larger on tablet */
+      font-size: 1.8rem;
     }
 
     .lightbox-tracklist {
@@ -671,6 +688,11 @@ document.addEventListener('DOMContentLoaded', function() {
         li {
           font-size: 0.8rem;
           padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+          color: var(--primary) !important;
+          
+          &:before {
+            color: var(--primary) !important;
+          }
         }
       }
     }
@@ -681,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 
-/* Tablet - 768px */
+/* Tablet - 768px - Reset mobile ordering and restore desktop layout */
 @media only screen and (min-width: 48rem) {
   #gallery-1716 {
     .cs-container {
@@ -738,49 +760,115 @@ document.addEventListener('DOMContentLoaded', function() {
       align-items: start;
     }
 
+    .lightbox-left-column {
+      display: flex; /* Reset from contents */
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .lightbox-right-column {
+      display: grid; /* Reset from contents */
+      grid-template-rows: 1fr auto;
+      gap: 1.5rem;
+      height: 100%;
+      align-items: start;
+    }
+
     .lightbox-image {
+      order: unset; /* Reset mobile ordering */
       max-width: none;
     }
 
-    .lightbox-info {
+       .lightbox-info {
+      order: unset; /* Reset mobile ordering */
+      flex: 1;
+      
       h3 {
         text-align: left;
         font-size: 2.2rem;
         margin-top: 0;
+        color: var(--primary);
       }
 
       .lightbox-release-date {
         text-align: left;
+        color: var(--primary);
+      }
+      
+      p {
+        color: var(--primary);
       }
     }
 
     .lightbox-tracklist {
+      order: unset; /* Reset mobile ordering */
+      
       h4 {
         text-align: left;
+        color: var(--primary);
       }
-
-           ol {
+      
+      ol {
         max-height: 200px;
+        overflow-y: auto;
         
         li {
           font-size: 0.85rem;
           padding: 0.5rem 0.75rem 0.5rem 3rem;
+          color: var(--primary) !important;
           
           &:before {
             left: 0.5rem;
             font-size: 0.7rem;
+            color: var(--primary) !important;
           }
         }
       }
     }
 
     .lightbox-purchase {
-      margin-top: 1rem;
-      align-self: center;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+      order: unset; /* Reset mobile ordering */
+      background: rgba(255, 255, 255, 0.08);
       padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      grid-row: 2;
+      align-self: start;
+
+      .lightbox-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--primary);
+      }
+
+      .purchase-btn {
+        background: var(--primary);
+        color: var(--secondary);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: brightness(1.1);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
     }
   }
 }
@@ -824,24 +912,50 @@ document.addEventListener('DOMContentLoaded', function() {
       gap: 3rem;
     }
 
+    .lightbox-left-column {
+      gap: 1.5rem;
+    }
+
+    .lightbox-right-column {
+      gap: 2rem;
+    }
+
     .lightbox-info h3 {
       font-size: 2.5rem;
     }
 
-    .lightbox-tracklist ol {
-      max-height: 250px;
-      
-      li {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.75rem 0.5rem 3rem;
+    .lightbox-tracklist {
+      ol {
+        max-height: none; /* Remove scrollbar on desktop */
+        overflow-y: visible;
+        
+        li {
+          font-size: 0.9rem;
+          padding: 0.5rem 0.75rem 0.5rem 3rem;
+          color: var(--primary) !important;
+          
+          &:before {
+            color: var(--primary) !important;
+          }
+        }
       }
     }
 
     .lightbox-purchase {
-      max-width: 500px;
       padding: 2rem;
     }
   }
+}
+
+/* Force track list text color - highest specificity */
+.lightbox-overlay #lightbox-tracks li,
+.lightbox-overlay .lightbox-tracklist ol li {
+  color: var(--primary) !important;
+}
+
+.lightbox-overlay #lightbox-tracks li:before,
+.lightbox-overlay .lightbox-tracklist ol li:before {
+  color: var(--primary) !important;
 }
 
 /* Reduce motion for users who prefer it */
