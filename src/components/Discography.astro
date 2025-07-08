@@ -14,7 +14,7 @@ const albumData = {
     description: "Ahumanu is Maui radio personality and entertainer Liz 'Kopa'a Tita' Morales, musician/artist/surfer Joni DeMello, and long-time Maui performer and beloved kupuna (elder) Aunty Bessie DeMello. This debut album honors their home and traditions: songs by Hawai'i's monarchs, a grandmother's departure from Samoa for Amelika, oldtimers' favorites, and contemporary classics. The medley created by Liz is a popular request at Maui weddings.",
     trackList: ["Kahului", "Ua Noho Au a Kupa", "Ahe Lau Makani", "Wedding Medley: Kawohikukapulani / If I Give My Heart to You", "Tofa My Feleni", "Sweet Lahaina Nights", "Pua Carnation", "Drums of the Islands", "Shells", "Ipo Lei Manu", "Kp Shuffle", "Crying in the Chapel"],
     price: "$15.99",
-    purchaseInfo: "Available on CD and digital download. Contact Liz directly for signed copies."
+    purchaseInfo: "Available in digital and physical formats. Contact Liz for pricing and availability."
   },
   2: {
     title: "Ahumanu - No Ku'uipo",
@@ -22,7 +22,7 @@ const albumData = {
     description: "No Ku'uipo is Ahumanu's Second CD release, a smart and joyful collection of island music that embodies the traditions of their local heritage as well as contemporary shadings that speak to their role as hosts of a daily radio show. Seven new compositions highlight this collecion, presented alongsidelesser known classics from years gone by.",
     trackList: ["No Ku'uipo Nei Aloha", "Swingtime In Honolulu", "Pohoiki", "Hemolele, Hemolele, Hemolele", "Makalapua", "Na Wahi Pana", "Ha'o'u", "All Right Now", "I Whisper Gently To You", "Vi'i O Lauli'i", "Humou", "All Of My Life"],
     price: "$15.99",
-    purchaseInfo: "Available on CD and digital download. Contact Liz directly for signed copies."
+    purchaseInfo: "Available in digital and physical formats. Contact Liz for pricing and availability."
   },
   3: {
     title: "Ahumanu - Songbird",
@@ -30,7 +30,7 @@ const albumData = {
     description: "A heartfelt collection of Hawaiian and contemporary melodies that showcases the trio’s signature harmonies, cultural roots, and soulful storytelling.",
     trackList: ["Songbird", "Kuu Aina / Kuu Home (Medley)", "Ai No Na Manu I Luna", "Nakahili", "Hana Ranch", "On Golden Sand / Ua Noho Au a Kupa (Medley)"],
     price: "$15.99",
-    purchaseInfo: "Available on CD and digital download. Contact Liz directly for signed copies."
+    purchaseInfo: "Available in digital and physical formats. Contact Liz for pricing and availability."
   },
   4: {
     title: "Ahumanu - Kahi Aloha",
@@ -38,7 +38,7 @@ const albumData = {
     description: "Maui's most popular female Hawaiian trio, Ahumanu's much-anticipated 4th album, Kahi Aloha, In This Place of Love. Liz Morales, Marja Apisaloma and Kekai Robinson perform fresh new remakes of familiar favorites like the Pat Benatar cover, “We Belong,” which explains where the group is at the moment as well as a traditional Samoan melody, “Afai E Te Alofa,” which honors the members’ Samoan heritage. There are also three brand new original compositions, “Kahi Aloha,” “E ‘Ano’ano E,” and “E Ho’ona’auao.” Guest artists, Denny Hemingson, Josh Kahula, and Casey Olsen appear on this primary Hawaiian music album. So pause for a moment and enjoy the beautiful vocal harmonies as they take you to this place of love.",
     trackList: ["E Ho'ona'auao", "Pola'ila'i", "Kahi Aloha", "Hanohano Waiehu", "E Ano Ano E", "My Sweet Lady", "Your Man", "My Sweet Pikake Lei", "Maui Nui a Kama", "Afai E Te Alofa (traditional Samoan melody)", "E Malama Ho'omaika'i", "We Belong (Pat Benatar cover)"],
     price: "$15.99",
-    purchaseInfo: "Available on CD and digital download. Contact Liz directly for signed copies."
+    purchaseInfo: "Available in digital and physical formats. Contact Liz for pricing and availability."
   },
   5: {
     title: "Ka Pilina - Na Wahi Pana",
@@ -46,7 +46,7 @@ const albumData = {
     description: "A captivating debut album, this 12-track collection takes listeners on a melodic journey across cherished Maui locales—Waikapū, Wailuku, Wai‘ehu, and Waihe‘e—through rich trio harmonies grounded in Hawaiian tradition, while weaving in contemporary acoustic elements. It showcases the trio's deep roots and emerging artistry in Hawaiian music culture.",
    trackList: ["Momi O Ka Pākīpika", "ʻAwapuhi Puakea", "Na Kanaloa", "Paoakalani", "Hilo One", "ʻOlu O Puʻulani", "Hinauluʻōhiʻa", "Puamana", "Hanohano Waiehu", "Pōhai Ke Aloha", "Punaluʻu", "Nā Wahi Pana"],
     price: "$16.99",
-    purchaseInfo: "Available on CD and digital download. Contact Liz directly for signed copies."
+    purchaseInfo: "Available in digital and physical formats. Contact Liz for pricing and availability."
   }
 };
 ---
@@ -125,9 +125,9 @@ const albumData = {
       <p id="lightbox-description">Album description goes here...</p>
     </div>
     <div class="lightbox-purchase">
-      <div class="lightbox-price" id="lightbox-price">$15.99</div>
+ <!--      <div class="lightbox-price" id="lightbox-price">$15.99</div> -->
       <p id="lightbox-purchase-info">Available in digital and physical formats</p>
-      <button class="purchase-btn">Purchase Album</button>
+  <!--    <button class="purchase-btn">Purchase Album</button> -->
     </div>
   </div>
 </div>
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxTitle = document.getElementById('lightbox-title');
     const lightboxDate = document.getElementById('lightbox-date');
     const lightboxDescription = document.getElementById('lightbox-description');
-    const lightboxPrice = document.getElementById('lightbox-price');
+  //  const lightboxPrice = document.getElementById('lightbox-price');
     const lightboxPurchaseInfo = document.getElementById('lightbox-purchase-info');
     const trackList = document.getElementById('lightbox-tracks');
 
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (lightboxTitle) lightboxTitle.textContent = album.title;
     if (lightboxDate) lightboxDate.textContent = album.releaseDate;
     if (lightboxDescription) lightboxDescription.textContent = album.description;
-    if (lightboxPrice) lightboxPrice.textContent = album.price;
+  //  if (lightboxPrice) lightboxPrice.textContent = album.price;
     if (lightboxPurchaseInfo) lightboxPurchaseInfo.textContent = album.purchaseInfo;
     
     // Populate track list with forced white color
@@ -258,12 +258,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Purchase button functionality
-  const purchaseBtn = document.querySelector('.purchase-btn');
-  if (purchaseBtn) {
-    purchaseBtn.addEventListener('click', function() {
-      window.location.href = '#';
-    });
-  }
+  // const purchaseBtn = document.querySelector('.purchase-btn');
+  // if (purchaseBtn) {
+  //   purchaseBtn.addEventListener('click', function() {
+  //     window.location.href = '#';
+  //   });
+  // }
 });
 </script>
 
