@@ -48,6 +48,15 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-dates">August 1, 8, 15, 22, 29</p>
                 </div>
                  <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
+                    <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
+                    <p class="venue-time">6:00-9:00pm</p>
+                    <p class="venue-dates">August 2, 9, 23</p>
+                    <h3 class="venue-name">Kea Lani Restaurant - Fairmont Kea Lani</h3>
+                    <p class="venue-time">6:00-8:00pm</p>
+                    <p class="venue-dates">August 16</p>
+                </div>
+                 <div class="schedule-item special-appearance">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Special Appearance</h3>
                     <h3 class="venue-name">Mulligan's on the Blue</h3>
                     <p class="venue-time">August 6 | 6:30pm</p>
@@ -174,6 +183,16 @@ import duetImage from '../assets/duet.png';
       grid-template-columns: 1fr; /* Single column layout */
     }
 
+    .special-appearance {
+    grid-column: 1 / -1; /* Span across all columns */
+    background: #f9f9f9; /* Optional: Add a background to distinguish it */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
     .schedule-title-desktop {
       display: none !important; /* Hide desktop title */
     }
@@ -202,9 +221,11 @@ import duetImage from '../assets/duet.png';
     }
 
     .schedule-image {
-      order: 0;
-      flex: 0 0 450px;
-      max-width: 100%;
+        order: 1; /* Image comes first */
+        flex: 0 0 auto;
+        max-width: 50%; /* Reduce the image width slightly for desktop */
+        margin: 0 auto; /* Center the image horizontally */
+        display: block;
     }
 
     .schedule-image img {
@@ -215,11 +236,21 @@ import duetImage from '../assets/duet.png';
     }
 
     .schedule-list {
-      order: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
-      gap: 2rem;
+        order: 3; /* Schedule list comes last */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for desktop */
+        gap: 2rem;
+        width: 100%; /* Ensure the grid spans the full width */
     }
+
+    .special-appearance {
+    grid-column: 1 / -1; /* Span across all columns */
+    background: #f9f9f9; /* Optional: Add a background to distinguish it */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
     .schedule-item {
       padding: 2rem;
