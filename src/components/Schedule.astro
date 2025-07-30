@@ -18,24 +18,40 @@ import duetImage from '../assets/duet.png';
             </div>
             <div class="schedule-list">
                 <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
                     <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
                     <p class="venue-time">5:30-8:00pm</p>
-                    <p class="venue-dates">July 6, 9, 13, 16, 20, 23, 27</p>
+                    <p class="venue-dates">August 3, 10, 17, 24</p>
                 </div>
                 <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Mondays</h3>
                     <h3 class="venue-name">Pilina Lounge - Fairmont Kea Lani</h3>
                     <p class="venue-time">5:30-8:30pm</p>
-                    <p class="venue-dates">July 7, 14, 21, 28</p>
+                    <p class="venue-dates">August 4, 11, 15, 25</p>
                 </div>
                 <div class="schedule-item">
-                    <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
-                    <p class="venue-time">6:00-9:00pm</p>
-                    <p class="venue-dates">July 5, 12, 19, 26</p>
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Wednesdays</h3>
+                    <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
+                    <p class="venue-time">5:30-8:00pm</p>
+                    <p class="venue-dates">August 13, 20, 27</p>
+                </div>
+                 <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Thursdays</h3>
+                    <h3 class="venue-name">Honua'ula Luau - Grand Wailea</h3>
+                    <p class="venue-time">5:00-8:00pm</p>
+                    <p class="venue-dates">August 7, 14, 21, 28</p>
                 </div>
                 <div class="schedule-item">
-                    <h3 class="venue-name">Kea Lani Restaurant - Fairmont Kea Lani</h3>
-                    <p class="venue-time">6:00-8:00pm</p>
-                    <p class="venue-dates">July 4, 18</p>
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Fridays</h3>
+                    <h3 class="venue-name">The Banyan Tree - Ritz Carlton Kapalua</h3>
+                    <p class="venue-time">5:30-8:30pm</p>
+                    <p class="venue-dates">August 1, 8, 15, 22, 29</p>
+                </div>
+                 <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Special Appearance</h3>
+                    <h3 class="venue-name">Mulligan's on the Blue</h3>
+                    <p class="venue-time">August 6 | 6:30pm</p>
+                    <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p>
                 </div>
             </div>
         </div>
@@ -46,186 +62,207 @@ import duetImage from '../assets/duet.png';
 
 /* General Styles */
 #schedule-section {
-    padding: 4rem 1rem;
-    background-color: #fff;
+  padding: 4rem 1rem;
+  background-color: #fff;
+  overflow-x: hidden;
+  position: relative;
 
-    .schedule-container {
-        max-width: 1200px;
-        margin: 0 auto;
+  .schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .schedule-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .schedule-title {
+    font-family: 'Allura', cursive;
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin: 0;
+  }
+
+  .schedule-wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .schedule-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+
+  .schedule-item {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .venue-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  .venue-time {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--secondaryLight);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .venue-dates {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    color: var(--bodyTextColor);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .schedule-image {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+  }
 
-    .schedule-content {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .schedule-title {
-        font-family: 'Allura', cursive;
-        font-size: 2.5rem;
-        color: var(--secondary);
-        margin: 0;
-    }
-
+  /* Tablet and up (768px to 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
     .schedule-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .schedule-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .schedule-item {
-        background: #f9f9f9;
-        padding: 1.5rem;
-        border-radius: 8px;
-        text-align: center;
-        border-left: 4px solid var(--secondary);
-    }
-
-    .venue-name {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--secondary);
-        margin: 0 0 0.5rem 0;
-        line-height: 1.3;
-    }
-
-    .venue-time {
-        font-size: clamp(1rem, 2.5vw, 1.3rem);
-        color: var(--secondaryLight);
-        font-weight: 600;
-        margin: 0 0 0.5rem 0;
-    }
-
-    .venue-dates {
-        font-size: clamp(0.95rem, 2vw, 1.2rem);
-        color: var(--bodyTextColor);
-        margin: 0;
-        line-height: 1.4;
+      display: flex;
+      flex-direction: column; /* Switch to vertical stack */
+      gap: 2rem;
     }
 
     .schedule-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+      order: 1; /* Image comes first */
+      flex: 0 0 auto;
+      max-width: 60%;
+      margin: 0 auto; /* Center the image horizontally */
+      display: block;
     }
 
-    /* Hide mobile title by default */
+    .schedule-content.schedule-title-mobile {
+      order: 2; /* Mobile title comes second */
+      display: block; /* Show mobile title */
+    }
+
+    .schedule-list {
+      order: 3; /* Schedule list comes last */
+      grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .schedule-title-desktop {
+      display: none !important; /* Hide desktop title */
+    }
+  }
+
+  /* Desktop and up (1024px and above) */
+  @media (min-width: 1024px) {
+    padding: 5rem 2rem;
+
+    .schedule-title {
+      font-size: 4rem;
+    }
+
+    .schedule-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 3rem;
+    }
+
+    .schedule-content {
+      order: 0;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .schedule-image {
+      order: 0;
+      flex: 0 0 450px;
+      max-width: 100%;
+    }
+
+    .schedule-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 85% center;
+    }
+
+    .schedule-list {
+      order: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 2rem;
+    }
+
+    .schedule-item {
+      padding: 2rem;
+    }
+
+    .venue-name {
+      font-size: 1.1rem;
+    }
+
+    /* Title visibility */
     .schedule-title-mobile {
-        display: none;
+      display: none;
     }
 
-    /* Show desktop title by default */
     .schedule-title-desktop {
-        display: block;
+      display: block;
     }
-}
+  }
 
-/* Mobile - 360px */
-@media only screen and (max-width: 767px) {
-    #schedule-section .schedule-wrapper {
-        display: flex;
-        flex-direction: column; /* Stack the elements vertically */
-    }
-
-    #schedule-section .schedule-wrapper .schedule-image {
-        order: 1; /* Image comes first */
+  /* Mobile - 360px to 767px */
+  @media only screen and (max-width: 767px) {
+    .schedule-wrapper {
+      display: flex;
+      flex-direction: column;
     }
 
-    #schedule-section .schedule-wrapper .schedule-content.schedule-title-mobile {
-        order: 2; /* Mobile title comes second */
-        display: block; /* Show mobile title */
+    .schedule-image {
+      order: 1;
     }
 
-    #schedule-section .schedule-wrapper .schedule-list {
-        order: 3; /* Schedule list comes last */
+    .schedule-content.schedule-title-mobile {
+      order: 2;
+      display: block;
     }
 
-    /* Hide desktop title */
+    .schedule-list {
+      order: 3;
+      grid-template-columns: 1fr;
+    }
+
     .schedule-title-desktop {
-        display: none !important; /* Ensure desktop title is hidden */
+      display: none !important;
     }
-}
-
-/* Tablet and up */
-@media (min-width: 768px) {
-    #schedule-section {
-        padding: 5rem 2rem;
-
-        .schedule-title {
-            font-size: 4rem;
-        }
-
-        .schedule-wrapper {
-            display: flex;
-            flex-direction: row; /* Side-by-side layout for desktop */
-            align-items: stretch; /* Ensure both columns are the same height */
-            gap: 3rem;
-        }
-
-        .schedule-content {
-            order: 0; /* Ensure the title stays above everything */
-            width: 100%; /* Make the title span the full width */
-            text-align: center;
-            margin-bottom: 2rem; /* Add spacing below the title */
-        }
-
-        .schedule-image {
-            order: 0; /* Reset order for desktop */
-            flex: 0 0 400px; /* Fixed width for the image */
-        }
-
-        .schedule-list {
-            order: 0; /* Reset order for desktop */
-            flex: 1; /* Take up the remaining space */
-            display: flex;
-            flex-direction: column;
-            gap: 2rem; /* Restore the original spacing between items */
-        }
-
-        .schedule-item {
-            padding: 2rem; /* Restore the original padding */
-        }
-
-        .venue-name {
-            font-size: 1.4rem;
-        }
-
-        .schedule-image img {
-            width: 100%;
-            height: 100%; /* Stretch to fill the container */
-            object-fit: cover; /* Maintain aspect ratio while filling */
-            object-position: 85% center;
-        }
-
-        /* Show desktop title and hide mobile title */
-        .schedule-title-mobile {
-            display: none;
-        }
-
-        .schedule-title-desktop {
-            display: block;
-        }
-    }
-}
-
-/* Large desktop */
-@media (min-width: 1024px) {
-    #schedule-section {
-        .schedule-image {
-            flex: 0 0 450px; /* Slightly larger image for large screens */
-        }
-    }
+  }
 }
 </style>
