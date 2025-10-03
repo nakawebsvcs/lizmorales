@@ -19,6 +19,43 @@ import aboutImage from '../assets/IMG_4132.jpeg';
     <Schedule />
 
     <!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-39">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Favorite snapshots from my recent travels</span>
+            <h2 class="cs-title">Highlights</h2>
+        </div>
+        <div class="cs-image-group">
+            <!-- Picture 1 - Left Section -->
+            <picture class="cs-picture cs-picture-one">
+                <source media="(max-width: 600px)" srcset="/assets/liz-mapu.png">
+                <source media="(min-width: 601px)" srcset="/assets/liz-mapu.png">
+                <img loading="lazy" decoding="async" src="/assets/liz-mapu.png" alt="Liz and Mapuana" width="752" height="920">
+            </picture>
+            <!-- Right Section -->
+            <div class="cs-flex-group">
+                <!-- Picture 2 -->
+                <picture class="cs-picture cs-picture-two">
+                    <source media="(max-width: 600px)" srcset="/assets/liz-conch.png">
+                    <source media="(min-width: 601px)" srcset="/assets/liz-conch.png">
+                    <img loading="lazy" decoding="async" src="/assets/liz-conch.png" alt="Liz with Conch" width="595" height="811";>
+                </picture>
+                <!-- Picture 3 -->
+                <picture class="cs-picture cs-picture-three">
+                    <source media="(max-width: 600px)" srcset="/assets/liz-cocktail.png">
+                    <source media="(min-width: 601px)" srcset="/assets/liz-cocktail.png">
+                    <img loading="lazy" decoding="async" src="/assets/liz-cocktail.png" alt="Liz with cocktail" width="501" height="589">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+                                
+
+    <!-- ============================================ -->
 <!--                     CTA                      -->
 <!-- ============================================ -->
 
@@ -427,6 +464,120 @@ import aboutImage from '../assets/IMG_4132.jpeg';
        
     }
 }
+
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    #gallery-39 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1440/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-title {
+            font-family: 'Allura', cursive;
+            font-size: 4rem;
+            margin: 0;
+            max-width: 25ch;
+        }
+
+        .cs-image-group {
+            /* scales the whole section down, and grows with the screen width */
+            /* bigger vw unit grows it, smaller shrinks it */
+            font-size: ~"min(1.1vw, 1em)";
+            width: 100%;
+            max-width: (1440/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 1;
+        }
+
+        .cs-flex-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .cs-picture-two {
+            margin-bottom: (16/16em);
+        }
+
+        .cs-picture {
+            display: block;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 35% 50%;
+            }
+        }
+
+        .cs-picture-one {
+            width: (752/16em);
+            height: (920/16em);
+            margin-top: (177/16em);
+            margin-right: (16/16em);
+
+            &:before {
+                /* Color box */
+                content: "";
+                position: absolute;
+                display: block;
+                height: (485/16em);
+                width: (453/16em);
+                background: var(--secondary);
+                opacity: 1;
+                bottom: (-64/16em);
+                left: (-33/16em);
+                z-index: -1;
+            }
+        }
+
+        .cs-picture-two {
+            width: (595/16em);
+            height: (811/16em);
+        }
+
+        .cs-picture-three {
+            width: (501/16em);
+            height: (589/16em);
+        }
+    }
+}
+
+                                
 /*-- -------------------------- -->
 <---            CTA             -->
 <--- -------------------------- -*/
