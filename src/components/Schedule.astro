@@ -18,17 +18,23 @@ import duetImage from '../assets/duet.png';
                 <h2 class="schedule-title">Currently Playing</h2>
             </div>
             <div class="schedule-list">
-                <div class="schedule-item">
+                <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
                     <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
                     <p class="venue-time">5:30-8:00pm</p>
                     <p class="venue-dates">December 7, 14, 21, 28</p>
+                </div> -->
+                 <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
+                    <h3 class="venue-name">Mauka Makai Restaurant - Weston Nanea</h3>
+                    <p class="venue-time">10:00am-12:00pm</p>
+                    <p class="venue-dates">January 4, 11, 18, 25</p>
                 </div>
                 <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Mondays</h3>
                     <h3 class="venue-name">Pilina Lounge - Fairmont Kea Lani</h3>
                     <p class="venue-time">5:30-8:30pm</p>
-                    <p class="venue-dates">December 1, 8, 15, 29</p>
+                    <p class="venue-dates">January 5, 12, 19, 26</p>
                 </div>
                  <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Tuesdays</h3>
@@ -39,12 +45,12 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-time">11:00am-12:30pm</p>
                     <p class="venue-dates">October 21</p>
                 </div> -->
-                <div class="schedule-item">
+                <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Wednesdays</h3>
                     <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
                     <p class="venue-time">5:30-8:00pm</p>
                     <p class="venue-dates">December 3, 10, 17, 31</p>
-                </div>
+                </div> -->
                  <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Thursdays</h3>
                     <h3 class="venue-name">Honua'ula Luau - Grand Wailea</h3>
@@ -53,12 +59,12 @@ import duetImage from '../assets/duet.png';
                     <h3 class="venue-name">Hot Kupuna Nights - Royal Lahaina Hotel</h3>
                     <p class="venue-dates">Nov 20 | 4-6pm</p>
                 </div> -->
-                 <div class="schedule-item">
+                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Fridays</h3>
                      <h3 class="venue-name">Pilina Lounge - Fairmont Kea Lani</h3>
                     <p class="venue-time">5:30-8:30pm</p>
                     <p class="venue-dates">December 26</p>
-                </div>
+                </div> -->
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Fridays</h3>
                     <h3 class="venue-name">The Banyan Tree - Ritz Carlton Kapalua</h3>
@@ -69,20 +75,20 @@ import duetImage from '../assets/duet.png';
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
                      <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
                     <p class="venue-time">6:00-9:00pm</p>
-                    <p class="venue-dates">December 6, 20, 27</p> 
+                    <p class="venue-dates">January 17, 31</p> 
                      <!-- <h3 class="venue-name">Kea Lani Restaurant - Fairmont Kea Lani</h3>
                     <p class="venue-time">6:00-8:00pm</p>
                     <p class="venue-dates">September 27</p> -->
                 </div>
-                 <div class="schedule-item special-appearance">
+                 <!-- <div class="schedule-item special-appearance">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Holiday Appearances</h3>
                     <h3 class="venue-name">Christmas at Alaloa Lounge - Ritz Carlton Kapalua</h3>
                     <p class="venue-time">Evening of December 25</p>
                     <h3 class="venue-name">Ringing in the New Year at Cane and Canoe - Montage Kapalua Bay</h3>
                     <p class="venue-time">December 31 | 5:30-8:00pm & 10:00pm-12:00am </p>
-                    <!-- <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a> -->
-                    <!-- <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p> -->
-                </div>
+                    <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a>
+                    <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p>
+                </div> -->
             </div>
         </div>
     </div>
@@ -237,7 +243,8 @@ import duetImage from '../assets/duet.png';
     .schedule-wrapper {
       display: flex;
       flex-direction: row;
-      align-items: stretch;
+      /* align-items: stretch;  (for several rows of days)*/
+      align-items: center; /* for only a few days */
       gap: 3rem;
     }
 
