@@ -1,0 +1,8 @@
+paths:
+  static: public
+  uploads: public/uploads
+timezone: Pacific/Honolulu
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
