@@ -5,37 +5,38 @@ import duetImage from '../assets/duet.png';
 
 <section id="schedule-section" style="margin-top: 5rem;">
     <div class="schedule-container">
-        <!-- Desktop Title -->
-        <div class="schedule-content schedule-title-desktop">
-            <h2 class="schedule-title">Currently Playing</h2>
-        </div>
         <div class="schedule-wrapper">
-            <!-- Mobile Title -->
             <div class="schedule-image">
                 <img src={duetImage.src} alt="Liz Morales performing as a duet" />
             </div>
-            <div class="schedule-content schedule-title-mobile">
-                <h2 class="schedule-title">Currently Playing</h2>
-            </div>
-            <div class="schedule-list">
+            <div class="schedule-details">
+                <!-- Desktop Title -->
+                <div class="schedule-content schedule-title-desktop">
+                    <h2 class="schedule-title">Currently Playing</h2>
+                </div>
+                <!-- Mobile Title -->
+                <div class="schedule-content schedule-title-mobile">
+                    <h2 class="schedule-title">Currently Playing</h2>
+                </div>
+                <div class="schedule-list">
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
                     <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
                     <p class="venue-time">5:30-8:00pm</p>
                     <p class="venue-dates">December 7, 14, 21, 28</p>
                 </div> -->
-                 <div class="schedule-item">
+                 <div class="schedule-item special-appearance">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
                     <h3 class="venue-name">Mauka Makai Restaurant - Weston Nanea</h3>
-                    <p class="venue-time">10:00am-12:00pm</p>
-                    <p class="venue-dates">January 4, 11, 18, 25</p>
+                    <p class="venue-time">10:00am-11:00am</p>
+                    <p class="venue-dates">February 1, 8, 15, 22</p>
                 </div>
-                <div class="schedule-item">
+                <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Mondays</h3>
                     <h3 class="venue-name">Pilina Lounge - Fairmont Kea Lani</h3>
                     <p class="venue-time">5:30-8:30pm</p>
                     <p class="venue-dates">January 5, 12, 19, 26</p>
-                </div>
+                </div> -->
                  <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Tuesdays</h3>
                     <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
@@ -72,10 +73,10 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-dates">August 1, 8, 15, 22, 29</p>
                 </div> -->
                <div class="schedule-item special-appearance">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Valentine's Day</h3>
                      <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
-                    <p class="venue-time">6:00-9:00pm</p>
-                    <p class="venue-dates">January 17, 31</p> 
+                    <p class="venue-time">4:00-8:00pm</p>
+                    <p class="venue-dates">Sat. February 14</p> 
                      <!-- <h3 class="venue-name">Kea Lani Restaurant - Fairmont Kea Lani</h3>
                     <p class="venue-time">6:00-8:00pm</p>
                     <p class="venue-dates">September 27</p> -->
@@ -120,8 +121,22 @@ import duetImage from '../assets/duet.png';
     margin: 0;
   }
 
+  .schedule-title-desktop {
+    display: none; /* Hide on mobile by default */
+  }
+
+  .schedule-title-mobile {
+    display: block; /* Show on mobile by default */
+  }
+
   .schedule-wrapper {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .schedule-details {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -199,6 +214,10 @@ import duetImage from '../assets/duet.png';
       gap: 2rem;
     }
 
+    .schedule-details {
+      order: 2; /* Details come second */
+    }
+
     .schedule-image {
       order: 1; /* Image comes first */
       flex: 0 0 auto;
@@ -243,9 +262,13 @@ import duetImage from '../assets/duet.png';
     .schedule-wrapper {
       display: flex;
       flex-direction: row;
-      /* align-items: stretch;  (for several rows of days)*/
-      align-items: center; /* for only a few days */
+      align-items: center;
       gap: 3rem;
+    }
+
+    .schedule-details {
+      order: 2; /* Details come second */
+      flex: 1 1 50%;
     }
 
     .schedule-content {
@@ -255,79 +278,27 @@ import duetImage from '../assets/duet.png';
       margin-bottom: 2rem;
     }
 
-    .schedule-image {
+   .schedule-image {
         order: 1; /* Image comes first */
-        flex: 0 0 auto;
-        max-width: 50%; /* Reduce the image width slightly for desktop */
-        margin: 0 auto; /* Center the image horizontally */
-        display: block;
-    }
-
-    .schedule-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 70% center; /* Adjust percentage to move image right/left in container */
+        flex: 1 1 50%;
+        max-width: 500px; /* Adjust max-width as needed */
     }
 
     .schedule-list {
-        order: 3; /* Schedule list comes last */
-        grid-template-columns: repeat(2, 1fr); /* Two columns for desktop */
-        gap: 2rem;
-        width: 100%; /* Ensure the grid spans the full width */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .schedule-title-mobile {
+      display: none !important; /* Hide mobile title */
+    }
+
+    .schedule-title-desktop {
+      display: block; /* Show desktop title */
     }
 
     .special-appearance {
-    grid-column: 1 / -1; /* Span across all columns */
-    background: #f9f9f9; /* Optional: Add a background to distinguish it */
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border-left: 4px solid var(--secondary);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-    .schedule-item {
-      padding: 2rem;
-    }
-
-    .venue-name {
-      font-size: 1.1rem;
-    }
-
-    /* Title visibility */
-    .schedule-title-mobile {
-      display: none;
-    }
-
-    .schedule-title-desktop {
-      display: block;
-    }
-  }
-
-  /* Mobile - 360px to 767px */
-  @media only screen and (max-width: 767px) {
-    .schedule-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .schedule-image {
-      order: 1;
-    }
-
-    .schedule-content.schedule-title-mobile {
-      order: 2;
-      display: block;
-    }
-
-    .schedule-list {
-      order: 3;
-      grid-template-columns: 1fr;
-    }
-
-    .schedule-title-desktop {
-      display: none !important;
+        grid-column: 1 / -1; /* Span across all columns */
     }
   }
 }
