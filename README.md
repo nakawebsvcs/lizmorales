@@ -1,48 +1,52 @@
-# Astro Starter Kit: Basics
+# Liz Morales Music
 
-```sh
-npm create astro@latest -- --template basics
+A single-page website for Hawaiian musician and wedding officiant Liz Morales, built with Astro.
+
+🔗 **View Live Site:** [lizmoralesmusic.com](https://lizmoralesmusic.com)
+
+## Overview
+
+This site showcases Liz Morales' work as a Native Hawaiian musician, wedding officiant, and music educator. Built from an Astro starter template and extensively customized with responsive design, dynamic scheduling features, and custom payment links.
+
+## Key Features
+
+- **Dynamic Schedule Component** - Automatically updated performance calendar with responsive grid layout and mobile/desktop view optimization
+- **Custom Responsive Design** - Mobile-first approach with breakpoint-specific layouts using LESS preprocessing
+- **Custom UI Elements** - Venmo QR code display and payment links with custom SVG icons and hover effects
+- **Optimized Images** - Responsive picture elements with multiple sources for performance
+- **Component Architecture** - Modular Astro components for discography, weddings, contact forms, and scheduling
+- **SEO & Social Meta** - Open Graph tags and social media optimization
+
+## Tech Stack
+
+- Astro 5.7
+- LESS for advanced CSS preprocessing
+- Custom responsive grid layouts
+- Google Fonts integration (Roboto, Allura)
+
+## Development
+
+```bash
+npm install          # Install dependencies
+npm run dev          # Start dev server at localhost:4321
+npm run build        # Build for production
+npm run preview      # Preview production build
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Project Structure
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+├── components/      # Reusable UI components
+│   ├── Schedule.astro
+│   ├── Discography.astro
+│   ├── Weddings.astro
+│   ├── ContactForm.astro
+│   ├── Header.astro
+│   └── Footer.astro
+├── layouts/        # Page layouts
+│   └── Layout.astro
+├── pages/          # Route pages
+│   └── index.astro
+└── styles/         # Global styles
+```
