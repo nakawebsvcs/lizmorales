@@ -6,11 +6,11 @@ A single-page website for Hawaiian musician and wedding officiant Liz Morales, b
 
 ## Overview
 
-This site showcases Liz Morales' work as a Native Hawaiian musician, wedding officiant, and music educator. Built from an Astro starter template and extensively customized with responsive design, dynamic scheduling features, and custom payment links.
+This site showcases Liz Morales' work as a Native Hawaiian musician, wedding officiant, and music educator. Built from an Astro starter template and extensively customized with responsive design, featured schedule layout, and custom payment links.
 
 ## Key Features
 
-- **Dynamic Schedule Component** - Automatically updated performance calendar with responsive grid layout and mobile/desktop view optimization
+- **Responsive Schedule Component** - Performance calendar with responsive grid layout and mobile/desktop view optimization
 - **Custom Responsive Design** - Mobile-first approach with breakpoint-specific layouts using LESS preprocessing
 - **Custom UI Elements** - Venmo QR code display and payment links with custom SVG icons and hover effects
 - **Optimized Images** - Responsive picture elements with multiple sources for performance
