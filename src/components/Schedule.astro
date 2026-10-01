@@ -35,7 +35,7 @@ import duetImage from '../assets/duet.png';
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Tuesdays</h3>
                     <h3 class="venue-name">The Shops at Wailea</h3>
                     <p class="venue-time">5:30-6:30pm</p>
-                    <p class="venue-dates">September 1, 8, 15, 22, 29</p><br>
+                    <p class="venue-dates">October 6, 13, 20, 27</p><br>
                 </div>
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Wednesdays</h3>
@@ -52,10 +52,10 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-dates">Nov 20 | 4-6pm</p>
                 </div> -->
                  <div class="schedule-item">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Fridays</h3>
-                     <h3 class="venue-name">Hampton Inn & Suites Maui North Shore</h3>
-                    <p class="venue-time">7:45-9:00pm</p>
-                    <p class="venue-dates">September 5, 12, 26</p> 
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
+                     <h3 class="venue-name">Palms Bar - Hampton Inn & Suites Maui North Shore</h3>
+                    <p class="venue-time">5:00-7:00pm</p>
+                    <p class="venue-dates">October 3, 10, 17, 24</p> 
                 </div>
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Saturday</h3>
@@ -71,28 +71,93 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-time">10:00am-12:00pm</p>
                     <p class="venue-dates">July 10, 24, 31</p>
                 </div> -->           
-                <!--     <div class="schedule-item special-appearance">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Valentine's Day</h3>
-                     <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
-                    <p class="venue-time">4:00-8:00pm</p>
-                    <p class="venue-dates">Sat. February 14</p> 
-                     <h3 class="venue-name">Kea Lani Restaurant - Fairmont Kea Lani</h3>
-                    <p class="venue-time">6:00-8:00pm</p>
-                    <p class="venue-dates">September 27</p> 
-                </div> -->
-                 <div class="schedule-item special-appearance">
+                   <div class="schedule-item special-appearance image-only">
+                    <img src="/assets/saturday-sunsets.png" alt="Saturday Sunsets at Hampton Inn" class="schedule-image lightbox-trigger" style="cursor: pointer;" />
+                </div>
+                  <!-- <div class="schedule-item special-appearance">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Special Appearances</h3>
                     <h3 class="venue-name">LĀ 'ULU at Maui Nui Botanical Gardens</h3>
                     <p class="venue-time">September 5 | 9am-2pm</p>
                     <h3 class="venue-name">Celebration of the Arts at Ritz Carlton Kapalua</h3>
                     <p class="venue-time">September 19</p>
-                    <!-- <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a> 
-                    <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p> -->
+                     <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a> 
+                    <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p>  -->
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-image" alt="Full size image">
+</div>
+
+<script>
+    // Get the modal and elements
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-image');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const trigger = document.querySelector('.lightbox-trigger');
+
+    // When user clicks on the image, open the modal
+    if (trigger) {
+        trigger.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            modalImg.classList.remove('zoomed');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    }
+
+    // When user clicks on the lightbox image, toggle zoom
+    if (modalImg) {
+        modalImg.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent modal click from closing
+            this.classList.toggle('zoomed');
+            modal.classList.toggle('has-zoomed');
+
+            // Scroll to top when zooming in
+            if (this.classList.contains('zoomed')) {
+                modal.scrollTop = 0;
+            }
+        });
+    }
+
+    // When user clicks on close button, close the modal
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            modal.classList.remove('has-zoomed');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+
+    // When user clicks outside the image, close the modal
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                modalImg.classList.remove('zoomed');
+                modal.classList.remove('has-zoomed');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            modal.classList.remove('has-zoomed');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+</script>
 
 <style lang="less">
 
@@ -118,6 +183,20 @@ import duetImage from '../assets/duet.png';
     font-size: 2.5rem;
     color: var(--secondary);
     margin: 0;
+  }
+
+  .schedule-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    img {
+      max-width: 20%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
   }
 
   .schedule-title-desktop {
@@ -205,6 +284,29 @@ import duetImage from '../assets/duet.png';
     line-height: 1.4;
   }
 
+  .image-only {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 1.5rem 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
   /* Tablet and up (768px to 1023px) */
   @media (min-width: 768px) and (max-width: 1023px) {
     .schedule-wrapper {
@@ -236,14 +338,8 @@ import duetImage from '../assets/duet.png';
     }
 
     .special-appearance {
-    grid-column: 1 / -1; /* Span across all columns */
-    background: #f9f9f9; /* Optional: Add a background to distinguish it */
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border-left: 4px solid var(--secondary);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+      grid-column: 1 / -1; /* Span across all columns */
+    }
 
     .schedule-title-desktop {
       display: none !important; /* Hide desktop title */
@@ -299,6 +395,75 @@ import duetImage from '../assets/duet.png';
     .special-appearance {
         grid-column: 1 / -1; /* Span across all columns */
     }
+  }
+}
+
+/* Lightbox Styles */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 60px 20px 20px; /* Add padding for close button and spacing */
+
+  &.has-zoomed {
+    align-items: flex-start; /* Align to top when zoomed */
+    padding-top: 80px; /* Extra top padding when zoomed */
+  }
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  animation: zoom 0.3s;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+  margin: auto; /* Center when not zoomed */
+
+  &.zoomed {
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+    cursor: zoom-out;
+    transform: scale(0.9);
+    margin-top: 0; /* Remove top margin when zoomed */
+  }
+}
+
+@keyframes zoom {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 100000;
+
+  &:hover,
+  &:focus {
+    color: #bbb;
+  }
+
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
   }
 }
 </style>
