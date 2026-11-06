@@ -139,9 +139,9 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         .cs-image-group {
             /* scales the whole section down, and grows with the screen width */
             /* bigger vw unit grows it, smaller shrinks it */
-            font-size: ~"min(0.75vw, 0.75em)";
+            font-size: ~"min(1.2vw, 1em)";
             width: 100%;
-            max-width: (1200/16rem);
+            max-width: 100%;
             margin: auto;
             display: flex;
             justify-content: center;
@@ -204,6 +204,16 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         .cs-picture-three {
             width: (501/16em);
             height: (589/16em);
+        }
+    }
+}
+
+/* Desktop - 1024px - Keep gallery smaller on desktop */
+@media only screen and (min-width: 64rem) {
+    #gallery-39 {
+        .cs-image-group {
+            font-size: ~"min(0.75vw, 0.75em)";
+            max-width: (1200/16rem);
         }
     }
 }
