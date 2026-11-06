@@ -1,0 +1,226 @@
+    <!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-51">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Tips Welcome!</span>
+            <h2 class="cs-title">Tips and Payments Accepted Via Venmo</h2>
+            <!-- <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis at sit pellentesque molestie.  Diam, adipiscing ultrices eu turpis gravida.
+            </p> -->
+<div class="cs-venmo-container">
+    <div class="cs-venmo-qr">
+       <img src="/assets/qr-code.png" alt="Venmo QR Code">
+    </div>
+    <a href="https://venmo.com/u/Ahumanu" target="_blank" class="cs-venmo-link">
+        <div class="cs-venmo-info">
+        <svg class="cs-venmo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
+            viewBox="0 0 24 24" 
+            style="fill: var(--secondaryLight); width: 32px; height: 32px;">
+            <path d="M17.4608 3H6.5392C4.5888 3 3 4.5888 3 6.5392V17.4608C3 19.4112 4.5888 21 6.5392 21H17.4608C19.4112 21 21 19.4112 21 17.4608V6.5392C21 4.5888 19.4112 3 17.4608 3ZM13.2 16.5H9L7.5 7.5H11.7L12.6 13.5C13.8 11.4 14.7 9 14.7 7.8C14.7 7.2 14.55 6.75 14.25 6.3H18C18.3 6.9 18.45 7.5 18.45 8.25C18.45 11.4 15.3 15.15 13.2 16.5Z"/>
+        </svg>
+        <span class="cs-venmo-text">@ahumanu</span>
+    </div>
+    </a>
+</div>
+        </div>
+    </div>
+    
+</section>
+
+<style lang="less">
+    /*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-51 {
+        padding: var(--sectionPadding);
+        position: relative;
+        background-color: var(--secondary);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            color: var(--primary);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-picture {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* black color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #000;
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Venmo QR Code Styles */
+.cs-venmo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.cs-venmo-qr {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+    }
+}
+
+.cs-qr-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.cs-venmo-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+    
+    &:hover .cs-venmo-info {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.cs-venmo-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.cs-venmo-icon {
+    flex-shrink: 0;
+}
+
+.cs-venmo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 48rem) {
+    .cs-venmo-qr {
+        width: 300px;
+        height: 300px;
+    }
+}
+</style>

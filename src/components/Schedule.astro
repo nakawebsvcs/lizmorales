@@ -1,4 +1,3 @@
-
 ---
 import { Image } from 'astro:assets';
 import duetImage from '../assets/duet.png';
@@ -7,7 +6,8 @@ import duetImage from '../assets/duet.png';
 <section id="schedule-section" style="margin-top: 5rem;">
     <div class="schedule-container">
         <div class="schedule-wrapper">
-            <div class="schedule-image">
+            <h2 class="schedule-title schedule-heading">Currently Playing</h2>
+            <div class="schedule-media schedule-duet">
                 <Image
                     src={duetImage}
                     alt="Liz Morales performing as a duet"
@@ -15,19 +15,10 @@ import duetImage from '../assets/duet.png';
                     fetchpriority="high"
                     quality={85}
                     widths={[400, 600, 800, 1000]}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 500px"
+                    sizes="(max-width: 1023px) min(calc(100vw - 2rem), 30rem), 320px"
                 />
             </div>
-            <div class="schedule-details">
-                <!-- Desktop Title -->
-                <div class="schedule-content schedule-title-desktop">
-                    <h2 class="schedule-title">Currently Playing</h2>
-                </div>
-                <!-- Mobile Title -->
-                <div class="schedule-content schedule-title-mobile">
-                    <h2 class="schedule-title">Currently Playing</h2>
-                </div>
-                <div class="schedule-list">
+            <div class="schedule-list">
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
                     <h3 class="venue-name">Cane and Canoe - Montage Kapalua Bay</h3>
@@ -40,11 +31,11 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-time">5:30-8:30pm</p>
                     <p class="venue-dates">January 5, 12, 19, 26</p>
                 </div> -->
-                 <div class="schedule-item">
+                <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Tuesdays</h3>
                     <h3 class="venue-name">The Shops at Wailea</h3>
                     <p class="venue-time">5:30-6:30pm</p>
-                    <p class="venue-dates">October 6, 13, 20, 27</p><br>
+                    <p class="venue-dates">November 3, 10, 17, 24</p><br>
                 </div>
                 <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Wednesdays</h3>
@@ -52,7 +43,7 @@ import duetImage from '../assets/duet.png';
                     <p class="venue-time">5:30-8:00pm</p>
                     <p class="venue-dates">December 3, 10, 17, 31</p>
                 </div> -->
-                 <!-- <div class="schedule-item">
+                <!-- <div class="schedule-item">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Thursdays</h3>
                     <h3 class="venue-name">Honua'ula Luau - Grand Wailea</h3>
                     <p class="venue-time">5:30-8:30pm</p>
@@ -60,38 +51,45 @@ import duetImage from '../assets/duet.png';
                     <h3 class="venue-name">Hot Kupuna Nights - Royal Lahaina Hotel</h3>
                     <p class="venue-dates">Nov 20 | 4-6pm</p>
                 </div> -->
-                 <div class="schedule-item">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
-                     <h3 class="venue-name">Palms Bar - Hampton Inn & Suites Maui North Shore</h3>
-                    <p class="venue-time">5:00-7:00pm</p>
-                    <p class="venue-dates">October 3, 10, 17, 24</p> 
-                </div>
-                <!-- <div class="schedule-item">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturday</h3>
+                <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Fridays</h3>
                     <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
-                    <p class="venue-time">Celebration of the Arts</p>
-                    <p class="venue-dates">September 19</p>
-                </div> -->
-             <!--    <div class="schedule-item">
-                    <h3 class="schedule-title" style="font-size: 2.5rem;">Sundays</h3>
-                    <h3 class="venue-name">The Banyan Tree - Ritz Carlton Kapalua</h3>
+                    <p class="venue-time">6:00-9:00pm</p>
+                    <p class="venue-dates">November 13, 20, 27</p>
+                </div>
+                <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Saturdays</h3>
+                    <h3 class="venue-name">Palms Bar - Hampton Inn & Suites Maui North Shore</h3>
+                    <p class="venue-time">5:00-7:00pm</p>
+                    <p class="venue-dates">November 7, 14, 21</p> 
+                </div>
+                <div class="schedule-item">
+                    <h3 class="schedule-title" style="font-size: 2.5rem;">Sunday</h3>
+                    <h3 class="venue-name">Alaloa Lounge - Ritz Carlton Kapalua</h3>
+                    <p class="venue-time">6:00 - 9:00pm</p>
+                    <p class="venue-dates">November 15</p>
+                </div>
+                <!--    <h3 class="venue-name">The Banyan Tree - Ritz Carlton Kapalua</h3>
                     <p class="venue-time">5:30-8:30pm</p>
                     <h3 class="venue-name">Mauka Makai Restaurant - Weston Nanea</h3>
                     <p class="venue-time">10:00am-12:00pm</p>
                     <p class="venue-dates">July 10, 24, 31</p>
-                </div> -->           
-                   <div class="schedule-item special-appearance image-only">
-                    <img src="/assets/saturday-sunsets.png" alt="Saturday Sunsets at Hampton Inn" class="schedule-image lightbox-trigger" style="cursor: pointer;" />
-                </div>
-                  <!-- <div class="schedule-item special-appearance">
+                </div> -->
+                <!-- <div class="schedule-item special-appearance">
                     <h3 class="schedule-title" style="font-size: 2.5rem;">Special Appearances</h3>
                     <h3 class="venue-name">LĀ 'ULU at Maui Nui Botanical Gardens</h3>
                     <p class="venue-time">September 5 | 9am-2pm</p>
                     <h3 class="venue-name">Celebration of the Arts at Ritz Carlton Kapalua</h3>
                     <p class="venue-time">September 19</p>
-                     <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a> 
+                    <a href="/assets/Concert-Program.pdf" class="event-link" target="_blank">See Event Flyer</a> 
                     <p class="venue-dates">Mele Concert with Uncle Benny Uyetake</p>  -->
-                </div>
+            </div>
+            <div class="schedule-media schedule-poster">
+                <img
+                    src="/assets/saturday-sunsets.png"
+                    alt="Saturday Sunsets at Hampton Inn"
+                    class="lightbox-trigger"
+                />
             </div>
         </div>
     </div>
@@ -182,11 +180,6 @@ import duetImage from '../assets/duet.png';
     margin: 0 auto;
   }
 
-  .schedule-content {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
   .schedule-title {
     font-family: 'Allura', cursive;
     font-size: 2.5rem;
@@ -194,48 +187,61 @@ import duetImage from '../assets/duet.png';
     margin: 0;
   }
 
-  .schedule-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-
-    img {
-      max-width: 20%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  .schedule-title-desktop {
-    display: none; /* Hide on mobile by default */
-  }
-
-  .schedule-title-mobile {
-    display: block; /* Show on mobile by default */
+  .schedule-heading {
+    grid-area: heading;
+    text-align: center;
   }
 
   .schedule-wrapper {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .schedule-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "heading"
+      "duet"
+      "schedule"
+      "poster";
+    gap: 1.5rem;
   }
 
   .schedule-list {
+    grid-area: schedule;
     display: grid;
-    grid-template-columns: 1fr;
-    max-width: 100%;
-    box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
+  }
+
+  .schedule-media {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 30rem;
+    aspect-ratio: 4 / 5;
+    background: #f9f9f9;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .schedule-poster {
+    grid-area: poster;
+
+    img {
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+
+  .schedule-duet {
+    grid-area: duet;
   }
 
   .schedule-item {
@@ -271,21 +277,6 @@ import duetImage from '../assets/duet.png';
     line-height: 1.4;
   }
 
-  .schedule-image {
-    display: flex;
-    flex: 0 0 100%;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-  }
-
   .event-link {
     font-size: clamp(0.95rem, 2vw, 1.2rem);
     color: var(--bodyTextColor);
@@ -293,69 +284,6 @@ import duetImage from '../assets/duet.png';
     line-height: 1.4;
   }
 
-  .image-only {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 1.5rem 0 !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  /* Tablet and up (768px to 1023px) */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .schedule-wrapper {
-      display: flex;
-      flex-direction: column; /* Switch to vertical stack */
-      gap: 2rem;
-    }
-
-    .schedule-details {
-      order: 2; /* Details come second */
-    }
-
-    .schedule-image {
-      order: 1; /* Image comes first */
-      flex: 0 0 auto;
-      max-width: 60%;
-      margin: 0 auto; /* Center the image horizontally */
-      display: block;
-    }
-
-    .schedule-content.schedule-title-mobile {
-      order: 2; /* Mobile title comes second */
-      display: block; /* Show mobile title */
-    }
-
-    .schedule-list {
-      order: 3; /* Schedule list comes last */
-      grid-template-columns: 1fr; /* Single column layout */
-    }
-
-    .special-appearance {
-      grid-column: 1 / -1; /* Span across all columns */
-    }
-
-    .schedule-title-desktop {
-      display: none !important; /* Hide desktop title */
-    }
-  }
-
-  /* Desktop and up (1024px and above) */
   @media (min-width: 1024px) {
     padding: 5rem 2rem;
 
@@ -364,45 +292,30 @@ import duetImage from '../assets/duet.png';
     }
 
     .schedule-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .schedule-details {
-      order: 2; /* Details come second */
-      flex: 1 1 50%;
-    }
-
-    .schedule-content {
-      order: 0;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-   .schedule-image {
-        order: 1; /* Image comes first */
-        flex: 1 1 50%;
-        max-width: 500px; /* Adjust max-width as needed */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr) minmax(0, 1fr);
+      grid-template-areas:
+        "heading heading heading"
+        "duet schedule poster";
+      align-items: stretch;
     }
 
     .schedule-list {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .schedule-title-mobile {
-      display: none !important; /* Hide mobile title */
+    .schedule-item {
+      padding: 1.25rem;
     }
 
-    .schedule-title-desktop {
-      display: block; /* Show desktop title */
+    .schedule-poster img {
+      object-fit: cover;
     }
 
-    .special-appearance {
-        grid-column: 1 / -1; /* Span across all columns */
+    .schedule-media {
+      justify-self: stretch;
+      width: auto;
+      max-width: none;
+      aspect-ratio: auto;
     }
   }
 }

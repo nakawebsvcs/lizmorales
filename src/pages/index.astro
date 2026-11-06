@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import CTA from '../components/CTA.astro';
 import Discography from '../components/Discography.astro';
 import Weddings from '../components/Weddings.astro';
 import Schedule from '../components/Schedule.astro';
@@ -8,8 +10,6 @@ import Footer from '../components/Footer.astro';
 import '../styles/root.less';
 
 // Import images
-import image1 from '../assets/IMG_4064.jpeg';
-import image2 from '../assets/img-1.jpeg';
 import aboutImage from '../assets/IMG_4132.jpeg';
 ---
 
@@ -17,6 +17,8 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 	<Navbar />
 
     <Schedule />
+    <CTA />
+    <Hero />
 
     <!-- ============================================ -->
 <!--                   Gallery                    -->
@@ -50,100 +52,6 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                     <img loading="lazy" decoding="async" src="/assets/liz-cocktail.png" alt="Liz with cocktail" width="501" height="589">
                 </picture>
             </div>
-        </div>
-    </div>
-</section>
-                                
-
-    <!-- ============================================ -->
-<!--                     CTA                      -->
-<!-- ============================================ -->
-
-<section id="cta-51">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Tips Welcome!</span>
-            <h2 class="cs-title">Tips and Payments Accepted Via Venmo</h2>
-            <!-- <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis at sit pellentesque molestie.  Diam, adipiscing ultrices eu turpis gravida.
-            </p> -->
-<div class="cs-venmo-container">
-    <div class="cs-venmo-qr">
-       <img src="/assets/qr-code.png" alt="Venmo QR Code">
-    </div>
-    <a href="https://venmo.com/u/Ahumanu" target="_blank" class="cs-venmo-link">
-        <div class="cs-venmo-info">
-        <svg class="cs-venmo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
-            viewBox="0 0 24 24" 
-            style="fill: var(--secondaryLight); width: 32px; height: 32px;">
-            <path d="M17.4608 3H6.5392C4.5888 3 3 4.5888 3 6.5392V17.4608C3 19.4112 4.5888 21 6.5392 21H17.4608C19.4112 21 21 19.4112 21 17.4608V6.5392C21 4.5888 19.4112 3 17.4608 3ZM13.2 16.5H9L7.5 7.5H11.7L12.6 13.5C13.8 11.4 14.7 9 14.7 7.8C14.7 7.2 14.55 6.75 14.25 6.3H18C18.3 6.9 18.45 7.5 18.45 8.25C18.45 11.4 15.3 15.15 13.2 16.5Z"/>
-        </svg>
-        <span class="cs-venmo-text">@ahumanu</span>
-    </div>
-    </a>
-</div>
-        </div>
-    </div>
-    
-</section>
-
-	<!-- ============================================ -->
-<!--             Side By Side Reverse             -->
-<!-- ============================================ -->
-
-<section id="sbsr-956">
-    <div class="cs-container">
-        <div class="cs-image-group">
-            <!--Left Image-->
-            <picture class="cs-picture cs-picture1">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset={image1.src}>
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset={image1.src}>
-                <img loading="lazy" decoding="async" src={image1.src} alt="liz morales" width="349" height="590">
-            </picture>
-            <div class="cs-flex">
-                <!--right image-->
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset={image2.src}>
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset={image2.src}>
-                    <img loading="lazy" decoding="async" src={image2.src} alt="liz morales" width="281" height="387">
-                </picture>
-                <div class="cs-contact-group">
-                    <a class="cs-link" href="https://venmo.com/u/Ahumanu" target="_blank">
-                        <div class="cs-wrapper">
-     <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
-         viewBox="0 0 24 24" 
-         style="fill: var(--secondaryLight); width: 32px; height: 32px;">
-        <path d="M17.4608 3H6.5392C4.5888 3 3 4.5888 3 6.5392V17.4608C3 19.4112 4.5888 21 6.5392 21H17.4608C19.4112 21 21 19.4112 21 17.4608V6.5392C21 4.5888 19.4112 3 17.4608 3ZM13.2 16.5H9L7.5 7.5H11.7L12.6 13.5C13.8 11.4 14.7 9 14.7 7.8C14.7 7.2 14.55 6.75 14.25 6.3H18C18.3 6.9 18.45 7.5 18.45 8.25C18.45 11.4 15.3 15.15 13.2 16.5Z"/>
-    </svg>
-</div>
-                        <div class="cs-info">
-                            <span class="cs-header">Venmo</span>
-                            <span class="cs-link-content">@ahumanu</span>
-                        </div>
-                    </a>
-                    <a class="cs-link" href="mailto:ahumanu@yahoo.com">
-                        <picture class="cs-wrapper">
-                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-hair.svg" alt="icon" width="24" height="24">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-header">Get in touch</span>
-                            <span class="cs-link-content">ahumanu@yahoo.com</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="cs-content">
-            <span class="cs-topper">Native Hawaiian Musician, Wedding Officiant, & Hawaiian Music Practitioner/Educator</span>
-            <h2 class="cs-title">Liz Morales</h2>
-            <p class="cs-text">
-                Liz Morales is a professional entertainer, musician, and songwriter with over 20 years of experience performing across Hawaiʻi and beyond. An active gigging artist, she plays guitar, bass, ukulele, and steel guitar, offering a wide range of music from traditional Hawaiian to country, smooth jazz, contemporary island, and original compositions. Liz also serves as a licensed wedding officiant on Maui, sharing aloha and uplifting energy with couples on their special day. In addition to solo work, Liz collaborates with other musicians, supports live performances, and creates custom playlists and musical experiences for events. Known for her professionalism, creativity, and easygoing nature, Liz brings both talent and heart to every project.
-            </p>
-            <a href="#sbsr-1011" class="cs-button-solid" aria-label="learn more about liz">Read More</a>
         </div>
     </div>
 </section>
@@ -188,283 +96,6 @@ import aboutImage from '../assets/IMG_4132.jpeg';
                                 
 
 <style lang="less">
-	/*-- -------------------------- -->
-<---    Side By Side Reverse    -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #sbsr-956 {
-        padding: var(--sectionPadding);
-        padding-top: 7rem;
-        background-color: var(--primary);
-        /* clips anything overflowing */
-        overflow: hidden;
-        position: relative;
-
-        .cs-container {
-            width: 100%;
-            /* changes to 1280px at desktop */
-            max-width: (550/16rem);
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-        }
-
-        .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: left;
-            width: 100%;
-            max-width: (542/16rem);
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
-        }
-
-        .cs-title {
-            font-family: 'Allura', cursive;
-            font-size: 5rem;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .cs-text {
-            margin-bottom: (16/16rem);
-            opacity: 0.8;
-            &:last-of-type {
-                margin-bottom: (32/16rem);
-            }
-        }
-
-        .cs-image-group {
-            width: 100%;
-            max-width: (650/16rem);
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            /* 16px - 20px */
-            gap: clamp(1rem, 1.5vw, 1.25rem);
-        }
-
-        .cs-picture {
-            width: 100%;
-            grid-column: span 12;
-            position: relative;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 75% 50%;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-
-        .cs-picture1 {
-            height: (420/16rem);
-            margin-top: 1rem;
-            display: none;  /* Hide image1 on mobile */
-        }
-
-        .cs-picture2 {
-            height: (348/16rem);
-        }
-
-        .cs-flex {
-            width: 100%;
-            /* breaks up the container so the browser treats its children as if they are not inside this container. They are considered children of the .cs-image-group and makes it easier to space everything this way on mobile */
-            display: contents;
-        }
-
-        .cs-contact-group {
-            width: 100%;
-            margin: 0;
-            /* 24px - 40px */
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            border: 1px solid #484848;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-            grid-column: span 12;
-        }
-
-        .cs-link {
-            text-decoration: none;
-            margin-bottom: (20/16rem);
-            padding-bottom: (20/16rem);
-            border-bottom: 1px solid #484848;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (16/16rem);
-            position: relative;
-            z-index: 1;
-
-            &:hover {
-                .cs-wrapper {
-                    transform: scale(1.2);
-                }
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-                padding-bottom: 0;
-                border-bottom: none;
-            }
-        }
-
-        .cs-wrapper {
-            /* 44px - 56px */
-            width: clamp(2.75rem, 4.3vw, 3.5rem);
-            height: clamp(2.75rem, 4.3vw, 3.5rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* prevents flexbox from squishing it */
-            flex: none;
-            position: relative;
-            transition: transform 0.3s;
-
-            &:before {
-                /* light grey circle that animates on hover */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: var(--secondary);
-                opacity: 1;
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                transition:
-                    width 0.3s,
-                    height 0.3s;
-            }
-        }
-
-        .cs-icon {
-            width: (24/16rem);
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
-        }
-
-        .cs-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: (4/16rem);
-        }
-
-        .cs-header {
-            font-size: (16/16rem);
-            line-height: 1.2em;
-            font-weight: 700;
-            margin: 0;
-            color: var(--secondary);
-            display: block;
-        }
-
-        .cs-link-content {
-            font-size: (16/16rem);
-            line-height: 1.2em;
-            font-weight: 400;
-            margin: 0;
-            color: var(--secondary);
-            opacity: 0.8;
-            display: block;
-        }
-    }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #sbsr-956 {
-        padding-top: 12rem;
-    }
-    #sbsr-956 {
-        .cs-image-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            max-width: 90%;
-        }
-
-        .cs-flex {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 16px - 20px */
-            gap: clamp(1rem, 2vw, 1.25rem);
-        }
-
-        .cs-contact-group {
-            /* 32px - 64px */
-            margin-bottom: clamp(2rem, 6vw, 4rem);
-            /* prevents flexbox from squishing it */
-            flex: none;
-        }
-
-        .cs-picture1 {
-            width: 100%;
-            height: (420/16rem);
-            /* 32px - 64px */
-            margin-top: clamp(2rem, 6vw, 4rem);
-            display: block;
-        }
-
-        .cs-flex {
-            /* 267px - 325px */
-            width: clamp(16.6875rem, 25vw, 20.3125rem);
-            /* prevents flexbox from squishing it */
-            flex: none;
-            /* sends it to the far left */
-            order: -1;
-        }
-    }
-}
-
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #sbsr-956 {
-        .cs-container {
-            max-width: (1280/16rem);
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cs-image-group {
-            width: 55%;
-            /* prevents flexbox from squishing it */
-            flex: none;
-            /* sends it to the right in the 2nd position */
-            order: 2;
-        }
-
-        .cs-picture1 {
-            height: (590/16rem);
-        }
-    }
-}
-
-/* Large Desktop - 1800px */
-@media only screen and (min-width: 112.5rem) {
-    #sbsr-956 {
-       
-    }
-}
-
 /*-- -------------------------- -->
 <---          Gallery           -->
 <--- -------------------------- -*/
@@ -473,17 +104,17 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 @media only screen and (min-width: 0rem) {
     #gallery-39 {
         padding: var(--sectionPadding);
-        background-color: var(--primary);
+        background-color: #fff;
 
         .cs-container {
             width: 100%;
-            max-width: (1440/16rem);
+            max-width: (1200/16rem);
             margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
+            /* 32px - 48px */
+            gap: clamp(2rem, 4vw, 3rem);
         }
 
         .cs-content {
@@ -500,7 +131,7 @@ import aboutImage from '../assets/IMG_4132.jpeg';
 
         .cs-title {
             font-family: 'Allura', cursive;
-            font-size: 4rem;
+            font-size: 5rem;
             margin: 0;
             max-width: 25ch;
         }
@@ -508,9 +139,9 @@ import aboutImage from '../assets/IMG_4132.jpeg';
         .cs-image-group {
             /* scales the whole section down, and grows with the screen width */
             /* bigger vw unit grows it, smaller shrinks it */
-            font-size: ~"min(1.1vw, 1em)";
+            font-size: ~"min(0.75vw, 0.75em)";
             width: 100%;
-            max-width: (1440/16rem);
+            max-width: (1200/16rem);
             margin: auto;
             display: flex;
             justify-content: center;
@@ -574,196 +205,6 @@ import aboutImage from '../assets/IMG_4132.jpeg';
             width: (501/16em);
             height: (589/16em);
         }
-    }
-}
-
-                                
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #cta-51 {
-        padding: var(--sectionPadding);
-        position: relative;
-        background-color: var(--secondary);
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-        }
-
-        .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: center;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
-        }
-
-        .cs-title {
-            color: var(--primary);
-            font-weight: 400;
-        }
-
-        .cs-text {
-            margin-bottom: (16/16rem);
-            color: var(--bodyTextColorWhite);
-            opacity: 0.8;
-            &:last-of-type {
-                margin-bottom: (32/16rem);
-            }
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            color: #fff;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
-            border-radius: (4/16rem);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
-
-        .cs-picture {
-            height: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            z-index: -1;
-
-            &:before {
-                /* black color overlay */
-                content: "";
-                position: absolute;
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: #000;
-                opacity: 0.8;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
-
-/* Venmo QR Code Styles */
-.cs-venmo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.cs-venmo-qr {
-    width: 300px;
-    height: 300px;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* This ensures the QR code maintains its aspect ratio */
-    }
-}
-
-.cs-qr-placeholder {
-    width: 100%;
-    height: 100%;
-}
-
-.cs-venmo-link {
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    
-    &:hover {
-        transform: scale(1.05);
-    }
-    
-    &:hover .cs-venmo-info {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-}
-
-.cs-venmo-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.cs-venmo-icon {
-    flex-shrink: 0;
-}
-
-.cs-venmo-text {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--secondary);
-}
-
-/* Media query for larger screens */
-@media only screen and (min-width: 48rem) {
-    .cs-venmo-qr {
-        width: 300px;
-        height: 300px;
     }
 }
 
